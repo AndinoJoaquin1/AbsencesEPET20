@@ -1,5 +1,5 @@
 import React from "react";
-import {View,TextInput,Button} from "react-native"
+import {View,TextInput,Button} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
 export default function FormProfesores (){
     const Cursos=["6to 3era","6to 2da","6to 1ra"];
