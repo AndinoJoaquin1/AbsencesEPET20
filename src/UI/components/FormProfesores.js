@@ -2,8 +2,8 @@ import React from "react";
 import {View,TextInput,Button} from "react-native"
 import SelectDropdown from "react-native-select-dropdown";
 export default function FormProfesores (){
-    const Cursos=["6to 3era","6to 2da","6to 1ra"]
-    const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"]
+    const Cursos=["6to 3era","6to 2da","6to 1ra"];
+    const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"];
     return(
         <View>
             <Button title="Back"></Button>
@@ -26,5 +26,5 @@ export default function FormProfesores (){
             />
             <Button title="Agregar Profesor"></Button>
         </View>
-    )
+    );
 }

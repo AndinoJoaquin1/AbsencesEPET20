@@ -1,11 +1,11 @@
-import { StyleSheet, View, StatusBar } from 'react-native';
-import FormProfesores from './src/UI/FormProfesores';
+import { StyleSheet, View, StatusBar } from 'react-native'
+import ConsultaProfesores from './src/UI/components/ConsultaProfesores';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"/>
-      <FormProfesores/>
+      <ConsultaProfesores></ConsultaProfesores>
     </View>
   );
 }
