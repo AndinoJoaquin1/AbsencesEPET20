@@ -10,5 +10,5 @@ export default function LoginForm() {
             <TextInput placeholder="Contraseña"></TextInput>
             <Button title="Ingresar"></Button>
         </View>
-    );
+    )
 }
