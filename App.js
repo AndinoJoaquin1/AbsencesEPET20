@@ -1,11 +1,11 @@
 import { StyleSheet, View, StatusBar } from 'react-native'
-import ConsultaProfesores from './src/UI/components/ConsultaProfesores';
+import AltaConfimracion from './src/UI/components/AltaConfirmacion';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"/>
-      <ConsultaProfesores></ConsultaProfesores>
+      <AltaConfimracion></AltaConfimracion>
     </View>
   );
 }
