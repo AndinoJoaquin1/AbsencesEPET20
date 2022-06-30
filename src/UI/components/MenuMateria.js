@@ -11,5 +11,5 @@ export default function MenuMaterias() {
             <Button title="Consulta Materia"></Button>
             <Button title="Modificar Materia"></Button>
         </View>
-    )
+    );
 }

@@ -12,5 +12,5 @@ export default function MenuProfesores() {
             <Button title="Consulta Profesor"></Button>
             <Button title="Modificar Profesor"></Button>
         </View>
-    )
+    );
 }
