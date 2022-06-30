@@ -1,7 +1,8 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
+import PropTypes from 'prop-types';
 
-export default function AltaConfimracion(props){
+export default function AltaRealizado(props){
     const{sector,objeto}=props;
     return(
         <View>
@@ -13,7 +14,12 @@ export default function AltaConfimracion(props){
     );
 }
 
-AltaConfimracion.defaultProps={
+AltaRealizado.defaultProps={
     sector:"Al Profesor",
     objeto:"Ejemplo",
+}
+
+AltaRealizado.propTypes={
+    sector: PropTypes.string.isRequired,
+    objeto: PropTypes.string.isRequired,
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
 
-export default function ModConfimracion(props){
+export default function ModRealizado(props){
     const{sector,objeto}=props;
     return(
         <View>
@@ -13,7 +13,12 @@ export default function ModConfimracion(props){
     );
 }
 
-ModConfimracion.defaultProps={
+ModRealizado.defaultProps={
     sector:"Al Profesor",
     objeto:"Ejemplo",
+}
+
+ModRealizado.propTypes={
+    sector: PropTypes.string.isRequired,
+    objeto: PropTypes.string.isRequired,
 }

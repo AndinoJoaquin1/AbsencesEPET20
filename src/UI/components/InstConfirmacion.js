@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
+import PropTypes from 'prop-types';
 
 export default function InstConfirmacion(props){
     const{objeto}=props;
@@ -14,4 +15,8 @@ export default function InstConfirmacion(props){
 
 InstConfirmacion.defaultProps={
     objeto:"Ejemplo",
+}
+
+InstConfirmacion.propTypes={
+    objeto: PropTypes.string.isRequired,
 }

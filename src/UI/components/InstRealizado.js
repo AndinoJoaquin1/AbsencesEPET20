@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
+import PropTypes from 'prop-types';
 
 export default function InstRealizado(props){
     const{sector,objeto}=props;
@@ -16,4 +17,9 @@ export default function InstRealizado(props){
 InstRealizado.defaultProps={
     sector:"Al Profesor",
     objeto:"Ejemplo",
+}
+
+InstRealizado.propTypes={
+    sector: PropTypes.string.isRequired,
+    objeto: PropTypes.string.isRequired,
 }

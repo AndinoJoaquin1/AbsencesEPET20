@@ -1,11 +1,11 @@
-import { StyleSheet, View, StatusBar } from 'react-native'
-import InstRealizado from './src/UI/components/InstRealizado';
+import { StyleSheet, View, StatusBar } from 'react-native';
+import AltaRealizado from './src/UI/components/AltaRealizado';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"/>
-      <InstRealizado/>
+      <AltaRealizado/>
     </View>
   );
 }
