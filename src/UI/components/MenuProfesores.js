@@ -11,6 +11,8 @@ export default function MenuProfesores() {
             <Button title="Alta Profesor"></Button>
             <Button title="Consulta Profesor"></Button>
             <Button title="Modificar Profesor"></Button>
+            
         </View>
+
     )
 }
