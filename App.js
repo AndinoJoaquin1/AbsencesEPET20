@@ -1,11 +1,11 @@
 import { StyleSheet, View, StatusBar } from 'react-native'
-import FormUser from './src/UI/components/FormUser';
+import InstConfirmacion from './src/UI/components/InstConfirmacion';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"/>
-      <FormUser/>
+      <InstConfirmacion/>
     </View>
   );
 }
