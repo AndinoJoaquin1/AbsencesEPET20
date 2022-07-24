@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Button, Text } from "react-native";
+import { View, Button, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
 export  default function MainMenu (props){
     const{user}=props;
     return(
-        <View>
+        <View style={styles.container}>
             <Button title="Back"></Button>
             <Button title="Home"></Button>
             <Text> Hola {user}</Text>
@@ -24,3 +24,12 @@ MainMenu.defaultProps={
 MainMenu.propTypes={
     user: PropTypes.string.isRequired
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+});
