@@ -2,6 +2,7 @@ import React from "react";
 import { View, Button, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 
+// Menu principal 
 export  default function MainMenu (props){
     const{user}=props;
     return(
@@ -13,6 +14,7 @@ export  default function MainMenu (props){
             <Button title="Profesores"></Button>
             <Button title="Cursos"></Button>
             <Button title="Materias"></Button>
+            
         </View>
     );
 }

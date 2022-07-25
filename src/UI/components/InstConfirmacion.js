@@ -2,6 +2,8 @@ import React from 'react';
 import {View,Button,Text} from 'react-native';
 import PropTypes from 'prop-types';
 
+// Componente  para  confirmar   una inasistencia  
+
 export default function InstConfirmacion(props){
     const{objeto}=props;
     return(

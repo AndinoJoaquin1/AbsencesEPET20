@@ -1,7 +1,8 @@
 import React from "react";
 import {View,TextInput,Button} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
-
+ 
+// Componente de formulario de carga de usuario 
 export default function FormUser (){
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(

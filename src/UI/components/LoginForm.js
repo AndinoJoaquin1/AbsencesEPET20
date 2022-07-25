@@ -1,6 +1,7 @@
 import React from "react";
 import { View, TextInput, Button, Text, StyleSheet} from "react-native";
 
+// Componente de login
 export default function LoginForm({navigation}) {
     return (
         <View style={styles.container}>

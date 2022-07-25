@@ -2,6 +2,7 @@ import React from 'react';
 import {View,Button,Text} from 'react-native';
 import PropTypes from 'prop-types';
 
+// Componente de que se a realizado una alta en en la Base de datos con exito 
 export default function AltaRealizado(props){
     const{sector,objeto}=props;
     return(

@@ -4,6 +4,7 @@ import MainMenu from './src/UI/components/MainMenu'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+//Ejecucion de componentes y navegacion  entre  pantallas
 
 
 export default function App() {

@@ -1,7 +1,7 @@
-// menu  para  modificar , dar de alta y consultar los cusos
 import React from "react";
 import {Button, View, Text } from "react-native";
 
+// menu  para  modificar , dar de alta y consultar los cursos
 export default function MenuCursos() {
     return (
         <View>

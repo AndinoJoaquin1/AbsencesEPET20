@@ -2,6 +2,7 @@ import React from 'react';
 import {View,Button,Text} from 'react-native';
 import PropTypes from 'prop-types';
 
+// Componente de confirmacion de que se a marcado una inasistencia con exito
 export default function InstRealizado(props){
     const{sector,objeto}=props;
     return(

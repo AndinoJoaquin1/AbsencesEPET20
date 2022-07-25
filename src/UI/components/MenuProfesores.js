@@ -1,8 +1,8 @@
-// menu  para  modificar el estado , modificar los datos  , dar de alta y consulatar los profesores
 
 import React from "react";
 import { View, Button, Text } from "react-native";
 
+// menu  para  modificar el estado , modificar los datos  , dar de alta y consulatar los profesores
 export default function MenuProfesores() {
     return (
         <View>

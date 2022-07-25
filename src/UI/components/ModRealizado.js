@@ -1,6 +1,7 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
 
+// Componente que confirma una modificacion exitosa 
 export default function ModRealizado(props){
     const{sector,objeto}=props;
     return(
