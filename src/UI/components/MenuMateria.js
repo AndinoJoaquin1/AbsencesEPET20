@@ -1,3 +1,4 @@
+//menu para dar de alta , consultar y modificar una materia 
 import React from "react";
 import {Button, View, Text } from "react-native";
 
