@@ -3,11 +3,13 @@ import {View,Button,Text,StyleSheet} from 'react-native';
 //import PropTypes from 'prop-types';
 
 // Componente de confirmacion de que se a marcado una inasistencia con exito
-export default function InstRealizado(/*props*/){
+export default function InstRealizado(/*props*/{navigation}) {
     //const{sector,objeto}=props;
     return(
         <View style={styles.container}>
-            <Button title="Back"></Button>
+            <Button title="Back"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
             <Button title="Home"></Button>
             <Text>Se ha marcado {/*sector*/} {/*objeto*/} como ausente con exito</Text>
             <Button title="Continuar"></Button>
