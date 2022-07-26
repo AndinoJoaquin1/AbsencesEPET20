@@ -1,12 +1,12 @@
 import React from 'react';
-import {View,Button,Text} from 'react-native';
+import {View,Button,Text,StyleSheet} from 'react-native';
 //import PropTypes from 'prop-types'; 
 
 // Componente de que se a realizado una alta en en la Base de datos con exito 
 export default function AltaRealizado(/*props*/){
     //const{sector,objeto}=props;
     return(
-        <View>
+        <View style={styles.container}>
             <Button title="Back"></Button>
             <Button title="Home"></Button>
             <Text>Se ha agregado {/*sector*/} {/*objeto*/} con exito</Text>
@@ -24,3 +24,12 @@ export default function AltaRealizado(/*props*/){
     sector: PropTypes.string.isRequired,
     objeto: PropTypes.string.isRequired,
 }*/
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});

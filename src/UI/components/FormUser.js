@@ -1,12 +1,12 @@
 import React from "react";
-import {View,TextInput,Button} from "react-native";
+import {View,TextInput,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
  
 // Componente de formulario de carga de usuario 
 export default function FormUser (){
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(
-        <View>
+        <View style={styles.container}>
             <Button title="Back"></Button>
             <Button title="Home"></Button>
             <TextInput placeholder="Usuario" maxLength={25}/>
@@ -25,3 +25,12 @@ export default function FormUser (){
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});

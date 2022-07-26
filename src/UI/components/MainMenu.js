@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Button, Text, StyleSheet } from "react-native";
 //import PropTypes from "prop-types";
+
 // Menu principal 
 export  default function MainMenu (/*props*/{navigation}) {
     //const{user}=props;

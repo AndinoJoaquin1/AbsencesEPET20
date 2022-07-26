@@ -1,12 +1,11 @@
-
 import React from "react";
-import {Button, View, Text } from "react-native";
+import {Button, View, Text,StyleSheet } from "react-native"; 
 
 //menu para dar de alta , consultar y modificar una materia 
 
 export default function MenuMaterias() {
     return (
-        <View>
+        <View style={styles.container}>
             <Button title="Back"></Button>
             <Button title="Home"></Button>
             <Text>Usuarios</Text>
@@ -16,3 +15,12 @@ export default function MenuMaterias() {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
