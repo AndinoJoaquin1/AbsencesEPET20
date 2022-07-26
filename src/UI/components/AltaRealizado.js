@@ -12,7 +12,7 @@ export default function AltaRealizado(/*props*/{navigation}){
             </Button>
             <Text>Se ha agregado *TipoObjeto* *Objeto*{/*sector*/} {/*objeto*/} con exito</Text>
             <Button title="Continuar"
-            onPress={() => navigation.navigation('MainMenu')}>
+            onPress={() => navigation.navigate('MainMenu')}>
             </Button>
         </View>
     );
