@@ -3,12 +3,13 @@ import {View,Button,Text,StyleSheet} from 'react-native';
 //import PropTypes from 'prop-types'; 
 
 // Componente de que se a realizado una alta en en la Base de datos con exito 
-export default function AltaRealizado(/*props*/){
+export default function AltaRealizado(/*props*/{navigation}){
     //const{sector,objeto}=props;
     return(
         <View style={styles.container}>
-            <Button title="Back"></Button>
-            <Button title="Home"></Button>
+            <Button title="Back"
+            onPress={() => navigation.navigation('MenuUsuarios')}>
+            </Button>
             <Text>Se ha agregado {/*sector*/} {/*objeto*/} con exito</Text>
             <Button title="Continuar"></Button>
         </View>
