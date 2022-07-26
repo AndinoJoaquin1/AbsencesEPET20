@@ -4,12 +4,14 @@ import {View,Button,Text,StyleSheet} from 'react-native';
 
 // Componente  para  confirmar   una inasistencia  
 
-export default function InstConfirmacion(/*props*/){
+export default function InstConfirmacion(/*props*/{navigation}) {
     //const{objeto}=props;
     return(
         <View style={styles.container}>
             <Text>¿Desea marcar al Profesor/a {/*objeto*/} como ausente?</Text>
-            <Button title="Si"></Button>
+            <Button title="Si"
+            onPress={() => navigation.navigate('InstRealizado')}>
+            </Button>
             <Button title="No"></Button>
         </View>
     );
