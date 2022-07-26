@@ -5,11 +5,11 @@ export default function MenuUsuarios({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.navigate("MainMenu")}>
+            onPress={() => navigation.navigate('MainMenu')}>
             </Button>
             <Text>Usuarios</Text>
             <Button title="Alta Usuario"
-            onPress={() => navigation.navigate("FormUser")}>
+            onPress={() => navigation.navigate('FormUser')}>
             </Button>
             <Button title="Consulta Usuario"></Button>
             <Button title="Modificar Usuario"></Button>

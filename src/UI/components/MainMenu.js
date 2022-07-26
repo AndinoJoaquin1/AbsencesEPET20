@@ -8,11 +8,11 @@ export  default function MainMenu (/*props*/{navigation}) {
     return(
         <View style={styles.container}>
             <Button title="Cerrar session"
-            onPress={() => navigation.navigate("Inicio")}>
+            onPress={() => navigation.navigate('Inicio')}>
             </Button>
             <Text> Hola Usuario{/*user*/}</Text>
             <Button title="Usuarios"
-            onPress={() => navigation.navigate("MenuUsuarios")}>
+            onPress={() => navigation.navigate('MenuUsuarios')}>
             </Button>
             <Button title="Profesores"
             onPress={()=>{navigation.navigate('MenuProfesores')}}>

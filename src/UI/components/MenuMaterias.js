@@ -9,7 +9,7 @@ export default function MenuMaterias({navigation}) {
             <Button title="Back"
             onPress={() => navigation.navigate("MainMenu")}>
             </Button>
-            <Text>Usuarios</Text>
+            <Text>Materias</Text>
             <Button title="Alta Materia"></Button>
             <Button title="Consulta Materia"></Button>
             <Button title="Modificar Materia"></Button>

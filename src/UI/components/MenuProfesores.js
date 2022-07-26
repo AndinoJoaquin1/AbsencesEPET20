@@ -6,7 +6,7 @@ export default function MenuProfesores({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.navigate("MainMenu")}>
+            onPress={() => navigation.navigate('MainMenu')}>
             </Button>
             <Text> Profesores</Text>
             <Button title="Marcar Inasistencia"></Button>

@@ -3,11 +3,13 @@ import {View,TextInput,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
  
 // Componente de formulario de carga de usuario 
-export default function FormUser (){
+export default function FormUser ({navigation}){
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(
         <View style={styles.container}>
-            <Button title="Back"></Button>
+            <Button title="Back"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
             <Button title="Home"></Button>
             <TextInput placeholder="Usuario" maxLength={25}/>
             <TextInput placeholder="Contraseña" maxLength={25} textContentType="password"/>

@@ -10,7 +10,7 @@ export default function MenuCursos({navigation}) {
             </Button>
         
             
-            <Text>Usuarios</Text>
+            <Text>Cursos</Text>
            
             <Button 
             title="Alta Curso"
