@@ -5,7 +5,9 @@ import {Button, View, Text, StyleSheet} from "react-native";
 export default function MenuCursos({navigation}) {
     return (
         <View style={styles.container}>
-            <Button title="Back"></Button>
+            <Button title="Back"
+            onPress={() => navigation.navigate("MainMenu")}>
+            </Button>
            
             <Button
             title="Home"
