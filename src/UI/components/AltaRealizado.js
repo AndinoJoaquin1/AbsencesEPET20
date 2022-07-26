@@ -8,7 +8,7 @@ export default function AltaRealizado(/*props*/{navigation}){
     return(
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.navigation('MenuUsuarios')}>
+            onPress={() => navigation.goBack(null)}>
             </Button>
             <Text>Se ha agregado *TipoObjeto* *Objeto*{/*sector*/} {/*objeto*/} con exito</Text>
             <Button title="Continuar"
