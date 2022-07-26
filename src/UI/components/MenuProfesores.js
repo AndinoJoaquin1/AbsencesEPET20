@@ -6,7 +6,7 @@ export default function MenuProfesores({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBacl(null)}>
+            onPress={() => navigation.goBack(null)}>
             </Button>
             <Text> Profesores</Text>
             <Button title="Marcar Inasistencia"></Button>
