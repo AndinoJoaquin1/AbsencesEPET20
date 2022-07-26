@@ -1,16 +1,18 @@
 import React from "react";
 import { View, Button, Text, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 // Menu principal 
-export  default function MainMenu (props){
-    const{user}=props;
+export  default function MainMenu (/*props*/{navigation}) {
+    //const{user}=props;
     return(
         <View style={styles.container}>
             <Button title="Back"></Button>
             <Button title="Home"></Button>
-            <Text> Hola {user}</Text>
+            <Text> Hola {/*user*/}</Text>
             <Button title="Usuarios"></Button>
-            <Button title="Profesores"></Button>
+            <Button title="Profesores"
+            onPress={()=>{navigation.navigate('MenuProfesores')}}>
+            </Button>
             <Button title="Cursos"></Button>
             <Button title="Materias"></Button>
             
@@ -18,13 +20,13 @@ export  default function MainMenu (props){
     );
 }
 
-MainMenu.defaultProps={
+/*MainMenu.defaultProps={
     user:"14mat"
 }
 
 MainMenu.propTypes={
     user: PropTypes.string.isRequired
-}
+}*/
 
 const styles = StyleSheet.create({
     container: {
