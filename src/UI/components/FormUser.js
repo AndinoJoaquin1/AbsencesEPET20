@@ -25,7 +25,9 @@ export default function FormUser ({navigation}){
             buttonTextAfterSelection={(selectedItem,index)=>{return selectedItem}}
             defaultButtonText="Ingrese el tipo de usuario"
             />
-            <Button title="Agregar Usuario"></Button>
+            <Button title="Agregar Usuario"
+            onPress={() => navigation.navigate('AltaRealizado')}>
+            </Button>
         </View>
     );
 }
