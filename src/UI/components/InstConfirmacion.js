@@ -8,7 +8,7 @@ export default function InstConfirmacion(/*props*/{navigation}) {
     //const{objeto}=props;
     return(
         <View style={styles.container}>
-            <Text>¿Desea marcar al Profesor/a {/*objeto*/} como ausente?</Text>
+            <Text>¿Desea marcar al Profesor/a *Objeto*{/*objeto*/} como ausente?</Text>
             <Button title="Si"
             onPress={() => navigation.navigate('InstRealizado')}>
             </Button>
