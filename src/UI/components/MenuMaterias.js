@@ -6,8 +6,9 @@ import {Button, View, Text,StyleSheet } from "react-native";
 export default function MenuMaterias() {
     return (
         <View style={styles.container}>
-            <Button title="Back"></Button>
-            <Button title="Home"></Button>
+            <Button title="Back"
+            onPress={() => navigation.navigate("MainMenu")}>
+            </Button>
             <Text>Usuarios</Text>
             <Button title="Alta Materia"></Button>
             <Button title="Consulta Materia"></Button>

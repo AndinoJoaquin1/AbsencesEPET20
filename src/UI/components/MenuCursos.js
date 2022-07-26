@@ -8,11 +8,7 @@ export default function MenuCursos({navigation}) {
             <Button title="Back"
             onPress={() => navigation.navigate("MainMenu")}>
             </Button>
-           
-            <Button
-            title="Home"
-            onPress={()=>navigation.navigate('MainMenu')}>
-            </Button>
+        
             
             <Text>Usuarios</Text>
            
