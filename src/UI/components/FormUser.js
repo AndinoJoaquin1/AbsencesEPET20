@@ -10,7 +10,9 @@ export default function FormUser ({navigation}){
             <Button title="Back"
             onPress={() => navigation.goBack(null)}>
             </Button>
-            <Button title="Home"></Button>
+            <Button title="Home"
+            onPress={() => navigation.navigate('MainMenu')}>
+            </Button>
             <TextInput placeholder="Usuario" maxLength={25}/>
             <TextInput placeholder="Contraseña" maxLength={25} textContentType="password"/>
             <TextInput placeholder="Nombre" maxLength={25}/>
