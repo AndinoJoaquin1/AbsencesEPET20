@@ -12,7 +12,9 @@ export default function InstConfirmacion(/*props*/{navigation}) {
             <Button title="Si"
             onPress={() => navigation.navigate('InstRealizado')}>
             </Button>
-            <Button title="No"></Button>
+            <Button title="No"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
         </View>
     );
 }
