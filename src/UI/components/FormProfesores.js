@@ -30,7 +30,9 @@ export default function FormProfesores ({navigation}){
             buttonTextAfterSelection={(selectedItem,index)=>{return selectedItem}}
             defaultButtonText="Ingrese la materia"
             />
-            <Button title="Agregar Profesor"></Button>
+            <Button title="Agregar Profesor"
+            onPress={() => navigation.navigate('AltaRealizado')}>
+            </Button>
         </View>
     );
 }
