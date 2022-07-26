@@ -6,7 +6,7 @@ export default function MenuCursos({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.navigate("MainMenu")}>
+            onPress={() => navigation.goBack(null)}>
             </Button>
         
             

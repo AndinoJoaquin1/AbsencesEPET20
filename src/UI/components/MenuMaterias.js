@@ -7,7 +7,7 @@ export default function MenuMaterias({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.navigate("MainMenu")}>
+            onPress={() => navigation.goBack(null)}>
             </Button>
             <Text>Materias</Text>
             <Button title="Alta Materia"></Button>
