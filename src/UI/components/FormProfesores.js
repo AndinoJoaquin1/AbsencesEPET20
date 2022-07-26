@@ -3,12 +3,14 @@ import {View,TextInput,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
 
 // Componente de formulario de carga de profesores
-export default function FormProfesores (){
+export default function FormProfesores ({navigation}){
     const Cursos=["6to 3era","6to 2da","6to 1ra"];
     const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"];
     return(
         <View style={styles.container}>
-            <Button title="Back"></Button>
+            <Button title="Back"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
             <Button title="Home"></Button>
             <TextInput placeholder="Nombre" maxLength={25}/>
             <TextInput placeholder="Apellido" maxLength={25}/>
