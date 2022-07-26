@@ -14,7 +14,9 @@ export  default function MainMenu (/*props*/{navigation}) {
             <Button title="Profesores"
             onPress={()=>{navigation.navigate('MenuProfesores')}}>
             </Button>
-            <Button title="Cursos"></Button>
+            <Button title="Cursos"
+            onPress={()=>{navigation.navigate('MenuCursos')}}>
+            </Button>
             <Button title="Materias"></Button>
             
         </View>

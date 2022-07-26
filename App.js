@@ -10,7 +10,6 @@ import AltaRealizado from './src/UI/components/AltaRealizado';
 import ModRealizado from './src/UI/components/ModRealizado';
 import InstConfirmacion from './src/UI/components/InstConfirmacion';
 import InsRealizado from './src/UI/components/InstRealizado';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
