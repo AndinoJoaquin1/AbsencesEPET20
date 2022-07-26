@@ -11,7 +11,9 @@ export default function FormProfesores ({navigation}){
             <Button title="Back"
             onPress={() => navigation.goBack(null)}>
             </Button>
-            <Button title="Home"></Button>
+            <Button title="Home"
+            onPress={() => navigation.navigate('MainMenu')}>
+            </Button>
             <TextInput placeholder="Nombre" maxLength={25}/>
             <TextInput placeholder="Apellido" maxLength={25}/>
             <TextInput placeholder="D.N.I." maxLength={8}/>
