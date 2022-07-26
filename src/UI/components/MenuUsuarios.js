@@ -1,18 +1,16 @@
-import React from "react";
-import {Button, View, Text,StyleSheet } from "react-native"; 
+import React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-//menu para dar de alta , consultar y modificar una materia 
-
-export default function MenuMaterias({navigation}) {
+export default function MenuUsuarios({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
             onPress={() => navigation.navigate("MainMenu")}>
             </Button>
             <Text>Usuarios</Text>
-            <Button title="Alta Materia"></Button>
-            <Button title="Consulta Materia"></Button>
-            <Button title="Modificar Materia"></Button>
+            <Button title="Alta Usuario"></Button>
+            <Button title="Consulta Usuario"></Button>
+            <Button title="Modificar Usuario"></Button>
         </View>
     );
 }
