@@ -10,11 +10,10 @@ export default function InstRealizado(/*props*/{navigation}) {
             <Button title="Back"
             onPress={() => navigation.goBack(null)}>
             </Button>
-            <Button title="Home"
+            <Text>Se ha marcado *TipoObjeto* *Objeto*{/*sector*/} {/*objeto*/} como ausente con exito</Text>
+            <Button title="Continuar"
             onPress={() => navigation.navigate('MainMenu')}>
             </Button>
-            <Text>Se ha marcado *TipoObjeto* *Objeto*{/*sector*/} {/*objeto*/} como ausente con exito</Text>
-            <Button title="Continuar"></Button>
         </View>
     );
 }
