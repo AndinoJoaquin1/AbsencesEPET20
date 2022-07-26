@@ -10,6 +10,7 @@ import AltaRealizado from './src/UI/components/AltaRealizado';
 import ModRealizado from './src/UI/components/ModRealizado';
 import InstConfirmacion from './src/UI/components/InstConfirmacion';
 import InsRealizado from './src/UI/components/InstRealizado';
+import MenuUsuarios from './src/UI/components/MenuUsuarios';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -25,6 +26,7 @@ export default function App() {
         <Stack.Screen name="MenuProfesores" component={MenuProfesores}/>
         <Stack.Screen name="MenuMaterias" component={MenuMaterias}/>
         <Stack.Screen name="MenuCursos" component={MenuCursos}/>
+        <Stack.Screen name="MenuUsuarios" component={MenuUsuarios}/>
         <Stack.Screen name="FormProfesores" component={FormProfesores}/>
         <Stack.Screen name="FormUser" component={FormUser}/>
         <Stack.Screen name="AltaRealizado" component={AltaRealizado}/>
