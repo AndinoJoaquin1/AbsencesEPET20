@@ -2,11 +2,12 @@ import React from "react";
 import { View, Button, Text,StyleSheet } from "react-native";
 
 // menu  para  modificar el estado , modificar los datos  , dar de alta y consulatar los profesores
-export default function MenuProfesores() {
+export default function MenuProfesores({navigation}) {
     return (
         <View style={styles.container}>
-            <Button title="Back"></Button>
-            <Button title="Home"></Button>
+            <Button title="Back"
+            onPress={() => navigation.navigate("MainMenu")}>
+            </Button>
             <Text> Profesores</Text>
             <Button title="Marcar Inasistencia"></Button>
             <Button title="Alta Profesor"></Button>
