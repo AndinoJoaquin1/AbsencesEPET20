@@ -7,9 +7,10 @@ export  default function MainMenu (/*props*/{navigation}) {
     //const{user}=props;
     return(
         <View style={styles.container}>
-            <Button title="Back"></Button>
-            <Button title="Home"></Button>
-            <Text> Hola {/*user*/}</Text>
+            <Button title="Cerrar session"
+            onPress={() => navigation.navigate("Inicio")}>
+            </Button>
+            <Text> Hola Usuario{/*user*/}</Text>
             <Button title="Usuarios"></Button>
             <Button title="Profesores"
             onPress={()=>{navigation.navigate('MenuProfesores')}}>
