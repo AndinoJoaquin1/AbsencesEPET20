@@ -10,7 +10,9 @@ export default function MenuProfesores({navigation}) {
             </Button>
             <Text> Profesores</Text>
             <Button title="Marcar Inasistencia"></Button>
-            <Button title="Alta Profesor"></Button>
+            <Button title="Alta Profesor"
+            onPress={() => navigation.navigate('FormProfesores')}>
+            </Button>
             <Button title="Consulta Profesor"></Button>
             <Button title="Modificar Profesor"></Button>
         </View>
