@@ -8,7 +8,9 @@ export default function MenuUsuarios({navigation}) {
             onPress={() => navigation.navigate("MainMenu")}>
             </Button>
             <Text>Usuarios</Text>
-            <Button title="Alta Usuario"></Button>
+            <Button title="Alta Usuario"
+            onPress={() => navigation.navigate("FormUser")}>
+            </Button>
             <Button title="Consulta Usuario"></Button>
             <Button title="Modificar Usuario"></Button>
         </View>
