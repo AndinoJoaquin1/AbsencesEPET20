@@ -1,11 +1,11 @@
 import { StyleSheet, View, StatusBar } from 'react-native'
-import AltaConfimracion from './src/UI/components/AltaConfirmacion';
+import FormUser from './src/UI/components/FormUser';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"/>
-      <AltaConfimracion></AltaConfimracion>
+      <FormUser/>
     </View>
   );
 }

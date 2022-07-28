@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Button, Text } from "react-native";
+import { View, Button, Text } from "react-native";
 import PropTypes from "prop-types";
 
 export  default function MainMenu (props){

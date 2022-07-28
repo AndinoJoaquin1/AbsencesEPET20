@@ -11,5 +11,5 @@ export default function MenuCursos() {
             <Button title="Consulta Curso"></Button>
             <Button title="Modificar Curso"></Button>
         </View>
-    )
+    );
 }
