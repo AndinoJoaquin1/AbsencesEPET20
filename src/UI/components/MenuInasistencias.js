@@ -30,6 +30,10 @@ export default function MenuInasistencias(){
             </Button>
 
             
+            <Button title="Profe5"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
+
             </View>
     );
  } 
