@@ -11,6 +11,7 @@ import ModRealizado from './src/UI/components/ModRealizado';
 import InstConfirmacion from './src/UI/components/InstConfirmacion';
 import InsRealizado from './src/UI/components/InstRealizado';
 import MenuUsuarios from './src/UI/components/MenuUsuarios';
+import MenuInasistencias from './src/UI/components/MenuInasistencias';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
