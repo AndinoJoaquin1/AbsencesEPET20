@@ -28,12 +28,14 @@ export default function App() {
         <Stack.Screen name="MenuMaterias" component={MenuMaterias}/>
         <Stack.Screen name="MenuCursos" component={MenuCursos}/>
         <Stack.Screen name="MenuUsuarios" component={MenuUsuarios}/>
+        <Stack.Screen name="MenuInasistencias" component={MenuInasistencias}/>
         <Stack.Screen name="FormProfesores" component={FormProfesores}/>
         <Stack.Screen name="FormUser" component={FormUser}/>
         <Stack.Screen name="AltaRealizado" component={AltaRealizado}/>
         <Stack.Screen name="ModRealizado" component={ModRealizado}/>
         <Stack.Screen name="InstConfirmacion" component={InstConfirmacion}/>
         <Stack.Screen name="InsRealizado" component={InsRealizado}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );
