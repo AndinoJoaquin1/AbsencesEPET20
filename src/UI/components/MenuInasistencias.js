@@ -11,6 +11,10 @@ export default function MenuInasistencias(){
             onPress={() => navigation.goBack(null)}>
             </Button>
 
+            <Button title="Back"
+            onPress={() => navigation.goBack(null)}>
+            </Button>
 
             </View>
     );
+ } 
