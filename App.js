@@ -31,6 +31,7 @@ export default function App() {
         <Stack.Screen name="MenuInasistencias" component={MenuInasistencias}/>
         <Stack.Screen name="FormProfesores" component={FormProfesores}/>
         <Stack.Screen name="FormUser" component={FormUser}/>
+        <Stack.Screen name="FormMateria" component={FormMateria}/>
         <Stack.Screen name="AltaRealizado" component={AltaRealizado}/>
         <Stack.Screen name="ModRealizado" component={ModRealizado}/>
         <Stack.Screen name="InstConfirmacion" component={InstConfirmacion}/>
