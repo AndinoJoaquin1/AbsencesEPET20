@@ -1,5 +1,5 @@
 import React from "react";
-import {View,TextInput,Button,StyleSheet} from "react-native";
+import {View,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
 import {PropsNavigation} from '../interfaces/interfaces';
 
