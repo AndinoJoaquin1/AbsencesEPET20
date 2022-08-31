@@ -6,7 +6,7 @@ import MenuMaterias from './src/UI/components/MenuMaterias';
 import MenuCursos from './src/UI/components/MenuCursos';
 import FormProfesores from './src/UI/components/FormProfesores';
 import FormUser from './src/UI/components/FormUser';
-
+import FormCurso from './src/UI/components/FormCurso';
 import AltaRealizado from './src/UI/components/AltaRealizado';
 import ModRealizado from './src/UI/components/ModRealizado';
 import InstConfirmacion from './src/UI/components/InstConfirmacion';
@@ -33,7 +33,7 @@ export default function App() {
         <Stack.Screen name="MenuInasistencias" component={MenuInasistencias}/>
         <Stack.Screen name="FormProfesores" component={FormProfesores}/>
         <Stack.Screen name="FormUser" component={FormUser}/>
-  
+        <Stack.Screen name="FormCurso" component={FormCurso}/>
         <Stack.Screen name="AltaRealizado" component={AltaRealizado}/>
         <Stack.Screen name="ModRealizado" component={ModRealizado}/>
         <Stack.Screen name="InstConfirmacion" component={InstConfirmacion}/>

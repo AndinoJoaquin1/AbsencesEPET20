@@ -12,7 +12,7 @@ export default function MenuCursos({navigation}:PropsNavigation) {
            
             <Button 
             title="Alta Curso"
-            onPress={()=>navigation.navigate('')}/>
+            onPress={()=>navigation.navigate('FormCurso')}/>
            
             <Button 
             title="Consulta Curso"
