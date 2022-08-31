@@ -1,5 +1,6 @@
 import React from "react";
 import {View,TextInput,Button,StyleSheet} from "react-native";
+import SelectDropdown from "react-native-select-dropdown";
 import {PropsNavigation} from '../interfaces/interfaces';
 
 
@@ -10,8 +11,9 @@ import {PropsNavigation} from '../interfaces/interfaces';
 
 export default function FormMateria ({navigation}:PropsNavigation){
 
-    const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"];
-    const Division=["6,2,1"];
+    const Turno=["Vespertino","Mañana","Tarde"];
+    const Division=[6,2,1];
+    const Anio=[6,2,1];
 
     return(
         <View style={styles.container}>
