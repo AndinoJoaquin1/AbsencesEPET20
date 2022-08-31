@@ -1,27 +1,21 @@
 import React from "react";
 import { View, Button, Text,StyleSheet } from "react-native";
-
+import {PropsNavigation} from '../interfaces/interfaces';
 // menu  para  modificar el estado , modificar los datos  , dar de alta y consulatar los profesores
-export default function MenuProfesores({navigation}) {
+export default function MenuProfesores({navigation}:PropsNavigation) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBack(null)}>
-            </Button>
+            onPress={() => navigation.goBack()}/>
             <Text> Profesores</Text>
             <Button title="Marcar Inasistencia"></Button>
             <Button title="Alta Profesor"
-            onPress={() => navigation.navigate('FormProfesores')}>
-            </Button>
-            <Button title="Consulta Profesor"></Button>
-            <Button title="Modificar Profesor"></Button>
+            onPress={() => navigation.navigate('FormProfesores')}/>
+            <Button title="Consulta Profesor"/>
+            <Button title="Modificar Profesor"/>
 
         </View>
-<<<<<<< HEAD
     )}
-=======
-    );
-}
 
 const styles = StyleSheet.create({
     container: {
@@ -31,4 +25,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
->>>>>>> da6afeaf95ac3bf769c8b806bee5bd003405619e

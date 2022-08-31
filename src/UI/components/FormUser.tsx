@@ -1,18 +1,17 @@
 import React from "react";
 import {View,TextInput,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
+import {PropsNavigation} from '../interfaces/interfaces';
  
 // Componente de formulario de carga de usuario 
-export default function FormUser ({navigation}){
+export default function FormUser ({navigation}:PropsNavigation){
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBack(null)}>
-            </Button>
+            onPress={() => navigation.goBack()}/>
             <Button title="Home"
-            onPress={() => navigation.navigate('MainMenu')}>
-            </Button>
+            onPress={() => navigation.navigate('MainMenu')}/>
             <TextInput placeholder="Usuario" maxLength={25}/>
             <TextInput placeholder="Contraseña" maxLength={25} textContentType="password"/>
             <TextInput placeholder="Nombre" maxLength={25}/>
@@ -26,8 +25,7 @@ export default function FormUser ({navigation}){
             defaultButtonText="Ingrese el tipo de usuario"
             />
             <Button title="Agregar Usuario"
-            onPress={() => navigation.navigate('AltaRealizado')}>
-            </Button>
+            onPress={() => navigation.navigate('AltaRealizado')}/>
         </View>
     );
 }

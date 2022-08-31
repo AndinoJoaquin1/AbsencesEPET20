@@ -1,18 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import {PropsNavigation} from '../interfaces/interfaces';
 
-export default function MenuUsuarios({navigation}) {
+export default function MenuUsuarios({navigation}:PropsNavigation) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBack(null)}>
-            </Button>
+            onPress={() => navigation.goBack()}/>
             <Text>Usuarios</Text>
             <Button title="Alta Usuario"
-            onPress={() => navigation.navigate('FormUser')}>
-            </Button>
-            <Button title="Consulta Usuario"></Button>
-            <Button title="Modificar Usuario"></Button>
+            onPress={() => navigation.navigate('FormUser')}/>
+            <Button title="Consulta Usuario"/>
+            <Button title="Modificar Usuario"/>
         </View>
     );
 }

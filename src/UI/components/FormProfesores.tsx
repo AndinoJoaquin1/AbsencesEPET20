@@ -1,19 +1,18 @@
 import React from "react";
 import {View,TextInput,Button,StyleSheet} from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
+import {PropsNavigation} from '../interfaces/interfaces';
 
 // Componente de formulario de carga de profesores
-export default function FormProfesores ({navigation}){
+export default function FormProfesores ({navigation}:PropsNavigation){
     const Cursos=["6to 3era","6to 2da","6to 1ra"];
     const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"];
     return(
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBack(null)}>
-            </Button>
+            onPress={() => navigation.goBack()}/>
             <Button title="Home"
-            onPress={() => navigation.navigate('MainMenu')}>
-            </Button>
+            onPress={() => navigation.navigate('MainMenu')}/>
             <TextInput placeholder="Nombre" maxLength={25}/>
             <TextInput placeholder="Apellido" maxLength={25}/>
             <TextInput placeholder="D.N.I." maxLength={8}/>
@@ -31,8 +30,7 @@ export default function FormProfesores ({navigation}){
             defaultButtonText="Ingrese la materia"
             />
             <Button title="Agregar Profesor"
-            onPress={() => navigation.navigate('AltaRealizado')}>
-            </Button>
+            onPress={() => navigation.navigate('AltaRealizado')}/>
         </View>
     );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { View, TextInput, Button, Text, StyleSheet} from "react-native";
-
+import {PropsNavigation} from '../interfaces/interfaces';
 // Componente de login
-export default function LoginForm({navigation}) {
+export default function LoginForm({navigation}:PropsNavigation) {
     return (
         <View style={styles.container}>
             <Text>Bienvenido</Text>
@@ -10,8 +10,7 @@ export default function LoginForm({navigation}) {
             <TextInput placeholder="Contraseña"></TextInput>
             <Button 
             title="Ingresar" 
-            onPress={()=>navigation.navigate('MainMenu')}>
-            </Button>
+            onPress={()=>navigation.navigate('MainMenu')}/>
         </View>
     );
 }
