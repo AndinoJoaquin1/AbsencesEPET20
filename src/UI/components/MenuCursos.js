@@ -1,26 +1,31 @@
 import React from "react";
 import {Button, View, Text, StyleSheet} from "react-native";
-import {PropsNavigation} from '../interfaces/interfaces';
+
 // menu  para  modificar , dar de alta y consultar los cursos
-export default function MenuCursos({navigation}:PropsNavigation) {
+export default function MenuCursos({navigation}) {
     return (
         <View style={styles.container}>
             <Button title="Back"
-            onPress={() => navigation.goBack()}/>
+            onPress={() => navigation.goBack(null)}>
+            </Button>
         
+            
             <Text>Cursos</Text>
            
             <Button 
             title="Alta Curso"
-            onPress={()=>navigation.navigate('FormCurso')}/>
+            onPress={()=>navigation.navigate('')}>
+            </Button>
            
             <Button 
             title="Consulta Curso"
-            onPress={()=>navigation.navigate('')}/>
+            onPress={()=>navigation.navigate('')}> 
+            </Button> 
         
             <Button 
             title="Modificar Curso"
-            onPress={()=>navigation.navigate('')}/>
+            onPress={()=>navigation.navigate('')}>
+            </Button>
         </View>
     );
 }
