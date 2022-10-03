@@ -16,13 +16,17 @@ import MenuInasistencias from './src/UI/components/MenuInasistencias';
 import FormCurso from './src/UI/components/FormCurso';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NativeBaseProvider } from 'native-base';
 
 
 //Ejecucion de componentes y navegacion  entre  pantallas
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <NativeBaseProvider>
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Inicio">
         <Stack.Screen name="Inicio" component={LoginForm}/>
@@ -43,9 +47,9 @@ export default function App() {
 
       </Stack.Navigator>
     </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
 
 
 
-const Stack = createNativeStackNavigator();

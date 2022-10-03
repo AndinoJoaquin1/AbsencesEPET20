@@ -1,5 +1,6 @@
+import { Button } from "native-base";
 import React from "react";
-import { View, TextInput, Button, Text, StyleSheet} from "react-native";
+import { View, TextInput, Text, StyleSheet} from "react-native";
 import {PropsNavigation} from '../interfaces/interfaces';
 // Componente de login
 export default function LoginForm({navigation}:PropsNavigation) {
@@ -8,9 +9,11 @@ export default function LoginForm({navigation}:PropsNavigation) {
             <Text>Bienvenido</Text>
             <TextInput placeholder="Usuario"></TextInput>
             <TextInput placeholder="Contraseña"></TextInput>
-            <Button 
-            title="Ingresar" 
-            onPress={()=>navigation.navigate('MainMenu')}/>
+            <Button
+            onPress={()=>navigation.navigate('MainMenu')}
+            >    
+            Ingresar
+            </Button>
         </View>
     );
 }
