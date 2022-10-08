@@ -21,7 +21,10 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio">
+      <Stack.Navigator initialRouteName="Inicio"
+      screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="Inicio" component={LoginForm} />
         <Stack.Screen name="MainMenu" component={MainMenu} />
         <Stack.Screen name="MenuProfesores" component={MenuProfesores} />
