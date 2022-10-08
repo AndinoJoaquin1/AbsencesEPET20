@@ -7,7 +7,7 @@ import { PropsNavigation } from "../interfaces/interfaces";
 export default function LoginForm({ navigation }: PropsNavigation) {
   return (
     <Center w="100%">
-      <Box safeArea p="2" py="8" w="90%" maxW="290">
+      <Box safeArea p="2" mt="20%" py="8" w="90%" maxW="290">
         <Heading size="lg" fontWeight="600" color="coolGray.800">
           Bienvenido
         </Heading>
