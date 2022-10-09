@@ -25,8 +25,8 @@ const Navigation = () => {
       screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="Inicio" component={LoginForm} />
         <Stack.Screen name="MainMenu" component={MainMenu} />
+        <Stack.Screen name="Inicio" component={LoginForm} />
         <Stack.Screen name="MenuProfesores" component={MenuProfesores} />
         <Stack.Screen name="MenuMaterias" component={MenuMaterias} />
         <Stack.Screen name="MenuCursos" component={MenuCursos} />
