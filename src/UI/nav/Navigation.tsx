@@ -21,12 +21,23 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio"
+      <Stack.Navigator 
+      initialRouteName="Inicio" 
       screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen name="MainMenu" component={MainMenu} />
-        <Stack.Screen name="Inicio" component={LoginForm} />
+        headerTitleAlign:"center",
+        headerStyle:{backgroundColor:'#005db4'},
+        headerTintColor:'#ffffff',
+        headerTitleStyle:{fontFamily:'sans-serif-light'}
+        }}>
+        <Stack.Screen 
+        name="MainMenu" 
+        component={MainMenu} 
+        options={{
+          headerBackVisible:false,
+          title:"Absences EPET20"
+        }} 
+        />
+        <Stack.Screen name="Inicio" options={{headerShown:false}} component={LoginForm} />
         <Stack.Screen name="MenuProfesores" component={MenuProfesores} />
         <Stack.Screen name="MenuMaterias" component={MenuMaterias} />
         <Stack.Screen name="MenuCursos" component={MenuCursos} />

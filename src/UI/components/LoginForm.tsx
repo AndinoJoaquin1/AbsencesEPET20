@@ -6,7 +6,7 @@ import { PropsNavigation } from "../interfaces/interfaces";
 
 export default function LoginForm({ navigation }: PropsNavigation) {
   return (
-    <Center w="100%" flex={1}>
+    <Center flex={1}>
       <Box safeArea p="2" py="8" w="90%" maxW="290">
         <Heading size="lg" fontWeight="600" color="coolGray.800">
           Bienvenido
@@ -19,7 +19,7 @@ export default function LoginForm({ navigation }: PropsNavigation) {
             <FormControl.Label>Contraseña</FormControl.Label>
             <Input type="password" />
           </FormControl>
-          <Button mt="2" colorScheme="blue" marginTop="12"
+          <Button mt="2"  marginTop="12" colorScheme="darkBlue"
           onPress={()=> navigation.navigate('MainMenu')}
           >
             Ingresar
