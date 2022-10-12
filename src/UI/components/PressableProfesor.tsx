@@ -1,7 +1,14 @@
 import React from "react";
 import { Box, Heading, Pressable, Text, View } from "native-base";
 
-const PressableProfesor = () => {
+interface Props{
+  nombre:string,
+  apellido:string,
+  materia:string,
+  curso:string
+}
+
+const PressableProfesor = ({nombre, apellido, curso, materia}:Props) => {
   return (
     <Box safeArea>
       <Pressable
@@ -13,9 +20,9 @@ const PressableProfesor = () => {
             transform:[{ scale: isPressed ? 0.9 : 1}],
           }}
           >
-            <Heading fontSize="18">Nombre Apellido</Heading>
-            <Text mt="5">Materia</Text>
-            <Text>Curso</Text>
+            <Heading fontSize="18">{nombre} {apellido}</Heading>
+            <Text mt="5">{materia}</Text>
+            <Text>{curso}</Text>
           </Box>
         )
         }}
