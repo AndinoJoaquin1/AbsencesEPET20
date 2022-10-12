@@ -1,20 +1,20 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginForm from "../components/LoginForm";
-import MainMenu from "../components/MainMenu";
-import MenuProfesores from "../components/MenuProfesores";
-import MenuMaterias from "../components/MenuMaterias";
-import MenuCursos from "../components/MenuCursos";
-import MenuUsuarios from "../components/MenuUsuarios";
-import MenuInasistencias from "../components/MenuInasistencias";
-import FormProfesores from "../components/FormProfesores";
-import FormUser from "../components/FormUser";
-import FormMateria from "../components/FormMateria";
-import FormCurso from "../components/FormCurso";
-import AltaRealizado from "../components/AltaRealizado";
-import ModRealizado from "../components/ModRealizado";
-import InstConfirmacion from "../components/InstConfirmacion";
+import LoginForm from "../screens/LoginForm";
+import MainMenu from "../screens/MainMenu";
+import MenuProfesores from "../screens/MenuProfesores";
+import MenuMaterias from "../screens/MenuMaterias";
+import MenuCursos from "../screens/MenuCursos";
+import MenuUsuarios from "../screens/MenuUsuarios";
+import MenuInasistencias from "../screens/MenuInasistencias";
+import FormProfesores from "../screens/FormProfesores";
+import FormUser from "../screens/FormUser";
+import FormMateria from "../screens/FormMateria";
+import FormCurso from "../screens/FormCurso";
+import AltaRealizado from "../screens/AltaRealizado";
+import ModRealizado from "../screens/ModRealizado";
+import InstConfirmacion from "../screens/InstConfirmacion";
 
 const Stack = createNativeStackNavigator();
 
