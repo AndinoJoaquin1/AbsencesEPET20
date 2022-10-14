@@ -1,48 +1,42 @@
 import React from 'react';
-import {View,Button,StyleSheet} from 'react-native';
+import {View,Button, Center,Box} from 'native-base';
 import {PropsNavigation} from '../interfaces/interfaces';
 
 //menu de seleccionamiento de profesor para marcar la inasistencia
 
 export default function MenuInasistencias({navigation}:PropsNavigation) {
     return(
-        <View style={styles.container}>
-            <Button 
-            title="Back"
-            onPress={() => navigation.goBack()}/>
+      <Center  w="100%"  flex={"1"}> 
+      <Box safeArea p="2" py="8" w="90%" maxW="290"> 
+         
+            <Button margin="5"
+            onPress={() => navigation.goBack()}
+            >back</Button>
 
-            <Button 
-            title="Profe1"
-            onPress={() => navigation.goBack()}/>
+            <Button  margin="5"
+            onPress={() => navigation.goBack()}
+            > Profe1 </Button>
 
-            <Button 
-            title="Profe2"
-            onPress={() => navigation.goBack()}/>
+            <Button margin="5"
+            onPress={() => navigation.goBack()}
+            >  Profe2 </Button>
+
+          <Button margin="5"
+            onPress={() => navigation.goBack()}
+            >  Profe3  </Button>
 
 
-            <Button 
-            title="Profe3"
-            onPress={() => navigation.goBack()}/>
-
-
-            <Button
-            title="Profe4"
-            onPress={() => navigation.goBack()}/>
-
+            <Button margin="5"
+            onPress={() => navigation.goBack()}
+            >  Profe4  </Button>
             
-            <Button 
-            title="Profe5"
-            onPress={() => navigation.goBack()}/>
-
-            </View>
+          
+         
+            </Box>
+            </Center>
+    
+     
     );
     
  } 
- const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }
-     });
+  

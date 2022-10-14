@@ -1,27 +1,32 @@
 import React from "react";
-import {Button, View, Text, StyleSheet} from "react-native";
+import {Button, View, Text,  Box,Center} from "native-base";
+import { StyleSheet } from "react-native";
 import {PropsNavigation} from '../interfaces/interfaces';
 // menu  para  modificar , dar de alta y consultar los cursos
 export default function MenuCursos({navigation}:PropsNavigation) {
     return (
-        <View style={styles.container}>
-            <Button title="Back"
-            onPress={() => navigation.goBack()}/>
+        <Center w="100%" flex={"1"}>
+        <Box  safeArea w="90%"    alignItems="center" >
+       
+            <Button onPress={() => navigation.goBack()} colorScheme="blue" size="lg">         Back         </Button>
         
-            <Text>Cursos</Text>
+            <Text >Cursos </Text>
            
-            <Button 
-            title="Alta Curso"
-            onPress={()=>navigation.navigate('FormCurso')}/>
-           
-            <Button 
-            title="Consulta Curso"
-            onPress={()=>navigation.navigate('')}/>
+            <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('FormCurso')}
+            >     Alta Curso     </Button>
         
-            <Button 
-            title="Modificar Curso"
-            onPress={()=>navigation.navigate('')}/>
-        </View>
+            <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('')} 
+            > Consulta Curso </Button>
+        
+            <Button margin="5"colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('')}>
+            Modificar Curso
+            </Button>
+      
+        </Box>
+        </Center>
     );
 }
 
