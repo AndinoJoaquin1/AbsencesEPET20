@@ -3,7 +3,6 @@ import { FlatList, View } from "native-base";
 import { PropsNavigation } from "../interfaces/interfaces";
 import PressableProfesor from "../components/PressableProfesor";
 
-
 const MenuProfesores = ({ navigation }: PropsNavigation) => {
     const data = [
       {
@@ -14,6 +13,7 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
         materia: "Seguridad Informatica",
       }
     ];
+
   return (
     <View flex="1">
       <FlatList
