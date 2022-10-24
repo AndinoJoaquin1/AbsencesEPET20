@@ -1,45 +1,35 @@
 import React from "react";
-import {View,TextInput,Button,StyleSheet} from "react-native";
-import SelectDropdown from "react-native-select-dropdown";
+import { Box, Button, Center, Input } from "native-base";
+import { database } from '../database/FirebaseConfig';
 import {PropsNavigation} from '../interfaces/interfaces';
+import { collection, addDoc } from "firebase/firestore";
 
 // Componente de formulario de carga de profesores
 export default function FormProfesores ({navigation}:PropsNavigation){
-    const Cursos=["6to 3era","6to 2da","6to 1ra"];
-    const Materias=["Etica y Deontologia","Redes II","Programacion Web Dinamica"];
+
+    const [newProfesor, setNewProfesor] = React.useState({
+        firstName:'',
+        lastName:'',
+        materia:'',
+        curso:''
+    })
+
+    const Send = async () => {
+        await addDoc(collection(database, 'prueba'), newProfesor);
+        console.log("ok");
+    }
+
     return(
-        <View style={styles.container}>
-            <Button title="Back"
-            onPress={() => navigation.goBack()}/>
-            <Button title="Home"
-            onPress={() => navigation.navigate('MainMenu')}/>
-            <TextInput placeholder="Nombre" maxLength={25}/>
-            <TextInput placeholder="Apellido" maxLength={25}/>
-            <TextInput placeholder="D.N.I." maxLength={8}/>
-            <TextInput placeholder="N° de Telefono" maxLength={13}/>
-            <SelectDropdown
-            data={Cursos}
-            onSelect={(selectedItem, index)=>console.log(selectedItem,index)}
-            buttonTextAfterSelection={(selectedItem,index)=>{return selectedItem}}
-            defaultButtonText="Ingrese el curso"
-            />
-            <SelectDropdown
-            data={Materias}
-            onSelect={(selectedItem, index)=>console.log(selectedItem,index)}
-            buttonTextAfterSelection={(selectedItem,index)=>{return selectedItem}}
-            defaultButtonText="Ingrese la materia"
-            />
-            <Button title="Agregar Profesor"
-            onPress={() => navigation.navigate('AltaRealizado')}/>
-        </View>
+        <Center safeArea>
+            <Box mt="25%">
+                <Input placeholder="nombre" onChangeText={(value) => setNewProfesor({...newProfesor, firstName:value})}/>
+                <Input placeholder="apellido" onChangeText={(value) => setNewProfesor({...newProfesor, lastName:value})}/>
+                <Input placeholder="materia" onChangeText={(value) => setNewProfesor({...newProfesor, materia:value})}/>
+                <Input placeholder="curso" onChangeText={(value) => setNewProfesor({...newProfesor, curso:value})}/>
+                <Button onPress={Send}>
+                    Agregar
+                </Button>
+            </Box>
+        </Center>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
