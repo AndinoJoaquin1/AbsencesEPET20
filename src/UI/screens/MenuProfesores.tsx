@@ -8,23 +8,26 @@ import { database } from "../database/FirebaseConfig";
 
 
 const MenuProfesores = ({ navigation }: PropsNavigation) => {
-  const [profesores, setProfesores] = React.useState([] as any);
-  React.useEffect(()=>{
-    const colletionRef = collection(database, 'prueba');
-    const q = query(colletionRef, orderBy('lastName','desc'));
 
-    const deconstructor = async()=> onSnapshot(q, querySnapshot => {
-      setProfesores(
-        querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          firstName: doc.data().firstName,
-          lastName: doc.data().lastName,
-          materia: doc.data().materia,
-          curso: doc.data().curso
-        }))
-      );
-    })
-    return deconstructor;
+  const [profesores, setProfesores] = React.useState([] as any);
+  
+  const colletionRef = collection(database, 'prueba');
+  
+  const q = query(colletionRef, orderBy('lastName','desc'));
+ 
+  const destructor = async ()=> onSnapshot(q, querySnapshot => {
+    setProfesores ( 
+      querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        firstName: doc.data().firstName,
+        lastName: doc.data().lastName,
+        materia: doc.data().materia,
+        curso: doc.data().curso
+      }))
+    );
+  })
+  React.useEffect(()=>{
+    return destructor();
   }, [])
 
   return (
