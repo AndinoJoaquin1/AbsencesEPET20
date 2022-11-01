@@ -1,18 +1,33 @@
 import React from "react";
-import {Button, View, Text,StyleSheet } from "react-native"; 
+import {Button,Center,Box  } from "native-base"; 
+import {StyleSheet } from "react-native"
 import {PropsNavigation} from '../interfaces/interfaces';
 //menu para dar de alta , consultar y modificar una materia 
 
 export default function MenuMaterias({navigation}:PropsNavigation) {
     return (
-        <View style={styles.container}>
-            <Button title="Back"
-            onPress={() => navigation.goBack()}/>
-            <Text>Materias</Text>
-            <Button title="Alta Materia"/>
-            <Button title="Consulta Materia"/>
-            <Button title="Modificar Materia"/>
-        </View>
+        <Center w="100%" flex={"1"}>
+        <Box  safeArea w="90%"    alignItems="center" >
+       
+            <Button onPress={() => navigation.goBack()} colorScheme="blue" size="lg">         Back         </Button>
+        
+            
+           
+            <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('FormMateria')}
+            >      Cargar Materia      </Button>
+        
+            <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('')} 
+            > Consulta Materia </Button>
+        
+            <Button margin="5"colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('')}>
+            Modificar Materia
+            </Button>
+      
+        </Box>
+        </Center>
     );
 }
 
