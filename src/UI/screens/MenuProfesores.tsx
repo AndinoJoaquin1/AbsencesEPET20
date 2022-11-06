@@ -15,7 +15,7 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
   
   const q = query(colletionRef, orderBy('lastName','desc'));
  
-  const destructor = async ()=> onSnapshot(q, querySnapshot => {
+  const consultaDB = ()=> onSnapshot(q, querySnapshot => {
     setProfesores ( 
       querySnapshot.docs.map(doc => ({
         id: doc.id,
@@ -26,8 +26,12 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
       }))
     );
   })
+
   React.useEffect(()=>{
-    return destructor();
+    const fecthProfesores= async()=>{
+      const data = await consultaDB();
+    }
+    fecthProfesores();
   }, [])
 
   return (
