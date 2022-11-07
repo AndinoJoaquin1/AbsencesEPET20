@@ -39,7 +39,7 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
       <FlatList
         data={profesores}
         keyExtractor ={(item) => item.id}
-        renderItem={({ item }) => <PressableProfesor apellido={item.lastName} nombre={item.lastName} curso={item.curso} materia={item.materia}/>}
+        renderItem={({ item }) => <PressableProfesor lastName={item.lastName} firstName={item.lastName} curso={item.curso} materia={item.materia} id={item.id} navigation={navigation} route={undefined} />}
       />
     </View>
   );
