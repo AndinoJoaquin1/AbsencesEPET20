@@ -15,8 +15,29 @@ import FormCurso from "../screens/FormCurso";
 import AltaRealizado from "../screens/AltaRealizado";
 import ModRealizado from "../screens/ModRealizado";
 import InstConfirmacion from "../screens/InstConfirmacion";
+import ModProfesor from "../screens/ModProfesor";
 
-const Stack = createNativeStackNavigator();
+export type RootStackParams = {
+Inicio;
+MainMenu;
+MenuProfesores;
+MenuMaterias;
+MenuCursos;
+MenuUsuarios;
+MenuInasistencias;
+FormProfesores;
+FormUser;
+FormMateria;
+FormCurso;
+AltaRealizado;
+ModRealizado;
+InstConfirmacion;
+ModProfesor:{
+  id:string
+};
+}
+const Stack = createNativeStackNavigator<RootStackParams>();
+
 
 const Navigation = () => {
   return (
@@ -50,6 +71,7 @@ const Navigation = () => {
         <Stack.Screen name="AltaRealizado" component={AltaRealizado} />
         <Stack.Screen name="ModRealizado" component={ModRealizado} />
         <Stack.Screen name="InstConfirmacion" component={InstConfirmacion} />
+        <Stack.Screen name="ModProfesor" component={ModProfesor}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
