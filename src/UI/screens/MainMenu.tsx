@@ -1,10 +1,10 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Box, Button, Center, HamburgerIcon, Heading, Menu, Pressable } from "native-base";
 import React from "react";
 import { StyleSheet } from "react-native";
-import {PropsNavigation} from '../interfaces/interfaces';
-import Navigation from "../nav/Navigation";
+import Navigation, { RootStackParams } from "../nav/Navigation";
 
-
+type PropsNavigation = NativeStackScreenProps<RootStackParams, 'MainMenu'>
 // Menu principal 
 export  default function MainMenu ({navigation}:PropsNavigation) {
     return(
@@ -28,7 +28,7 @@ export  default function MainMenu ({navigation}:PropsNavigation) {
                 >        Materias        </Button>
             
                 <Button colorScheme="violet" size="lg" margin="5"
-                onPress={()=>navigation.navigate('MenuUsuario')}
+                onPress={()=>navigation.navigate('MenuUsuarios')}
                 >         Usuario         </Button>
 
                  

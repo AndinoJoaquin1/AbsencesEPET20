@@ -1,13 +1,14 @@
 import React from "react";
 import { FlatList, View } from "native-base";
-import { PropsNavigation } from "../interfaces/interfaces";
 import PressableProfesor from "../components/PressableProfesor";
 import { collection, onSnapshot, orderBy, query} from "firebase/firestore";
 import { database } from "../database/FirebaseConfig";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../nav/Navigation";
 
+type Props = NativeStackScreenProps<RootStackParams,'MenuProfesores'>
 
-
-const MenuProfesores = ({ navigation }: PropsNavigation) => {
+const MenuProfesores = ({ navigation }: Props) => {
 
   const [profesores, setProfesores] = React.useState([] as any);
   
@@ -39,7 +40,7 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
       <FlatList
         data={profesores}
         keyExtractor ={(item) => item.id}
-        renderItem={({ item }) => <PressableProfesor lastName={item.lastName} firstName={item.lastName} curso={item.curso} materia={item.materia} id={item.id} navigation={navigation} route={undefined} />}
+        renderItem={({ item }) => <PressableProfesor lastName={item.lastName} firstName={item.lastName} curso={item.curso} materia={item.materia} id={item.id} onPress={id=>{navigation.navigate('ModProfesor',{id})}} />}
       />
     </View>
   );
