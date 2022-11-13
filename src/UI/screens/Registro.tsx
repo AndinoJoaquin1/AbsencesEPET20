@@ -1,43 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Center, Input } from "native-base";
-import { database } from '../database/FirebaseConfig';
-import { collection, addDoc } from "firebase/firestore";
-import {auth} from "../firebase"
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../nav/Navigation";
+import { auth } from "../database/FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
+type PropsNavigation = NativeStackScreenProps<RootStackParams,'Registro'>
 
 // registro de ususario
-export default function registo ({navigation}:PropsNavigation){
-
-   
-const Registro =() => {
-    cost [email,  setEmail] = useState('')
-    cost [password , setPassword] = useState('')
-}
-
-const handlesingup =() => {
-    auth 
-    .createUserWithEmailandPassword(email, password )
-.then(userCredentials => {
-    const user = userCredentials.user;
-    console.log(user.email);
-})
-}
-
-    const Send = async () => {
-        await addDoc(collection(database, 'prueba'), newUsuruario);
-        console.log("ok");
+export default function Registo({ navigation }: PropsNavigation) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  const handleSingUp = () => {
+    createUserWithEmailAndPassword(auth,email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log(user.email);
+      })
+      .catch(e=>alert(e.message))
     }
 
-    return(
-        <Center safeArea>
-            <Box mt="25%">
-                <Input placeholder="Mail" onChangeText={(value) => setNewProfesor({...newUsuruario, email:value})}/>
-                <Input placeholder="Usuario" onChangeText={(value) => setNewProfesor({...newUsuruario, user:value})}/>
-                <Input placeholder="Contraseña " onChangeText={(value) => setNewProfesor({...newUsuruario, password:value})}/>
-                <Input placeholder="Confirmar Contrasñe" onChangeText={(value) => setNewProfesor({...newUsuruario, confpassword:value})}/>
-                <Button onPress={Send}>
-                    Agregar
-                </Button>
-            </Box>
-        </Center>
-    );
+  return (
+    <Center safeArea>
+      <Box mt="25%" width="90%">
+        <Input 
+        placeholder="Mail" onChangeText={(value) => setEmail(value)} />
+        <Input
+        placeholder="Contraseña" onChangeText={(value) => setPassword(value)}
+        />
+        <Button onPress={handleSingUp}>Agregar</Button>
+      </Box>
+    </Center>
+  );
 }
