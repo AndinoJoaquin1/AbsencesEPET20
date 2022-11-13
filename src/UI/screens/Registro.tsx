@@ -7,12 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 // registro de ususario
 export default function registo ({navigation}:PropsNavigation){
 
-    const [newUsuruario, setNewProfesor] = React.useState({
-        email:'',
-        user:'',
-        password:'',
-        confpassword:''
-    })
+   
 
     const Send = async () => {
         await addDoc(collection(database, 'prueba'), newUsuruario);
