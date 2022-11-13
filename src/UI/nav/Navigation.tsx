@@ -16,25 +16,29 @@ import AltaRealizado from "../screens/AltaRealizado";
 import ModRealizado from "../screens/ModRealizado";
 import InstConfirmacion from "../screens/InstConfirmacion";
 import ModProfesor from "../screens/ModProfesor";
+import Registo from "../screens/Registro";
 
 export type RootStackParams = {
-Inicio;
-MainMenu;
-MenuProfesores;
-MenuMaterias;
-MenuCursos;
-MenuUsuarios;
-MenuInasistencias;
-FormProfesores;
-FormUser;
-FormMateria;
-FormCurso;
-AltaRealizado;
-ModRealizado;
-InstConfirmacion;
+Inicio,
+MainMenu,
+MenuProfesores,
+MenuMaterias,
+MenuCursos,
+MenuUsuarios,
+MenuInasistencias,
+FormProfesores,
+FormUser,
+FormMateria,
+FormCurso,
+AltaRealizado,
+ModRealizado,
+InstConfirmacion
 ModProfesor:{
-  id:string
-};
+  id:string,
+  lastName:string,
+  firstName:string
+},
+Registro
 }
 const Stack = createNativeStackNavigator<RootStackParams>();
 
@@ -72,6 +76,7 @@ const Navigation = () => {
         <Stack.Screen name="ModRealizado" component={ModRealizado} />
         <Stack.Screen name="InstConfirmacion" component={InstConfirmacion} />
         <Stack.Screen name="ModProfesor" component={ModProfesor}/>
+        <Stack.Screen name="Registro" component={Registo}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
