@@ -8,6 +8,11 @@ import { collection, addDoc } from "firebase/firestore";
 export default function registo ({navigation}:PropsNavigation){
 
    
+const Registro =() => {
+    cost [email,  setEmail] = useState('')
+    cost [password , setPassword] = useState('')
+}
+
 
     const Send = async () => {
         await addDoc(collection(database, 'prueba'), newUsuruario);
