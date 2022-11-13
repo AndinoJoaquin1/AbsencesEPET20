@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Button, Center, Input } from "native-base";
 import { database } from '../database/FirebaseConfig';
-import {PropsNavigation} from '../interfaces/interfaces';
 import { collection, addDoc } from "firebase/firestore";
+import {auth} from "../firebase"
 
 // registro de ususario
 export default function registo ({navigation}:PropsNavigation){
@@ -13,6 +13,14 @@ const Registro =() => {
     cost [password , setPassword] = useState('')
 }
 
+const handlesingup =() => {
+    auth 
+    .createUserWithEmailandPassword(email, password )
+.then(userCredentials => {
+    const user = userCredentials.user;
+    console.log(user.email);
+})
+}
 
     const Send = async () => {
         await addDoc(collection(database, 'prueba'), newUsuruario);
