@@ -1,10 +1,12 @@
 import { collection, doc, getDoc, query, where } from 'firebase/firestore';
-import { Box, Button, Center, HStack, Text, View } from 'native-base';
+import { Box, Button, Center, HStack, Text, View,Select ,Input,CheckIcon} from 'native-base';
 import React,{useState} from 'react';
 import { database } from '../database/FirebaseConfig';
 import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import { RootStackParams } from '../nav/Navigation';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import {PropsNavigation} from '../interfaces/interfaces';
+ 
 
 type Props = NativeStackScreenProps<RootStackParams, 'ModProfesor'>;
 
@@ -35,17 +37,56 @@ const ModProfesor = ({route}:Props) => {
     .then((doc)=>{
         console.log(doc.data(), doc.id);
     })  
+
+
+     
     return (
         <Center>
-            <Box>
+            <Box safeArea p="2" py="8" w="90%" maxW="290" >
+            <Button title="Back" 
+        onPress={() => navigation.goBack()}/> 
                 <HStack space={2} justifyContent="center">
             
-                    <Button onPress={showDatePicker}>
-                        ola
-                    </Button>
-                    <Button>
-                        caho
-                    </Button>
+<Select selectedValue={service} minWidth="200" accessibilityLabel="Ingre la hora de inasistencia" placeholder="Ingre la hora de inasistencia " _selectedItem={{
+              bg: "teal.600",
+              endIcon: <CheckIcon size="5"   />
+            }} mt={10} onValueChange={itemValue => setService(itemValue)}>
+                <Select.Item label="Primera " value="ux" />
+                <Select.Item label="Segunda " value="ux" />
+                <Select.Item label="Tercera " value="ux" />
+                <Select.Item label="Cuarta " value="ux" />
+                <Select.Item label="Quinta " value="ux" />
+                <Select.Item label="Sexta " value="ux" />
+                <Select.Item label="Septima " value="ux" />
+              </Select>
+            
+            
+              <Select selectedValue={service} minWidth="200" accessibilityLabel="Ingrese la materia " placeholder="Ingrese la materia " _selectedItem={{
+              bg: "teal.600",
+              endIcon: <CheckIcon size="5" />
+            }} mt={10} onValueChange={itemValue => setService(itemValue)}>
+                <Select.Item label="Matematica " value="ux" />
+                <Select.Item label="Fisica" value="ux" />
+                <Select.Item label="Ingles  " value="ux" />
+                <Select.Item label="S.O " value="ux" />
+                <Select.Item label="Dibujo " value="ux" />
+                <Select.Item label="Lengua" value="ux" />
+              </Select>
+
+
+              <Select selectedValue={service} minWidth="200" accessibilityLabel="Ingrese la cantidad de dias " placeholder="Ingrese la cantidad de dias" _selectedItem={{
+              bg: "teal.600",
+              endIcon: <CheckIcon size="5" />
+            }} mt={10} onValueChange={itemValue => setService(itemValue)}>
+                <Select.Item label="Uno(1) " value="ux" />
+                <Select.Item label="Dos(2)" value="ux" />
+                <Select.Item label="Tres(3) " value="ux" />
+                <Select.Item label="Cuatro(4)" value="ux" />
+                <Select.Item label="Cinco (5) " value="ux" />
+                <Select.Item label="Otro " value="ux" />
+              </Select>
+
+  
                 </HStack>
                     <Text>{showHour}</Text>
                     <DateTimePicker

@@ -15,7 +15,7 @@ export default function MenuMaterias({navigation}:PropsNavigation) {
            
             <Button margin="5" colorScheme="blue" size="lg"
             onPress={()=>navigation.navigate('FormMateria')}
-            >      Cargar Materia      </Button>
+            >  Cargar Materia  </Button>
         
             <Button margin="5" colorScheme="blue" size="lg"
             onPress={()=>navigation.navigate('')} 

@@ -1,34 +1,77 @@
 import React from "react";
-import {View,TextInput,Button,StyleSheet} from "react-native";
+import {View,TextInput,StyleSheet} from "react-native";
+import { Select , Box, Center ,CheckIcon, FormControl,Input,Button } from "native-base";
 import SelectDropdown from "react-native-select-dropdown";
 import {PropsNavigation} from '../interfaces/interfaces';
  
 // Componente de formulario de carga de usuario 
 export default function FormUser ({navigation}:PropsNavigation){
+
+
+
+
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(
-        <View style={styles.container}>
-            <Button title="Back"
-            onPress={() => navigation.goBack()}/>
-            <Button title="Home"
-            onPress={() => navigation.navigate('MainMenu')}/>
-            <TextInput placeholder="Usuario" maxLength={25}/>
-            <TextInput placeholder="Contraseña" maxLength={25} textContentType="password"/>
-            <TextInput placeholder="Nombre" maxLength={25}/>
-            <TextInput placeholder="Apellido" maxLength={25}/>
-            <TextInput placeholder="D.N.I." maxLength={8}/>
-            <TextInput placeholder="N° de Telefono" maxLength={13}/>
-            <SelectDropdown
-            data={Tipo}
-            onSelect={(selectedItem, index)=>console.log(selectedItem,index)}
-            buttonTextAfterSelection={(selectedItem,index)=>{return selectedItem}}
-            defaultButtonText="Ingrese el tipo de usuario"
-            />
-            <Button title="Agregar Usuario"
-            onPress={() => navigation.navigate('AltaRealizado')}/>
-        </View>
+        <Center flex={1}>
+        <Box safeArea p="2" py="8" w="90%" maxW="290">
+     
+        <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.goBack()}
+            >     Back    </Button>
+
+     <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('MainMenu')}
+            >     Menu     </Button>
+        
+
+          
+            <FormControl  mt="25">
+            <FormControl.Label>Usuario</FormControl.Label>
+            <Input />
+          </FormControl>
+
+            <FormControl  mt="25">
+            <FormControl.Label>Contraseña</FormControl.Label>
+            <Input type="password"  /> 
+            </FormControl>
+
+
+            <FormControl  mt="25">
+            <FormControl.Label>Nombre</FormControl.Label>
+            <Input />
+          </FormControl>
+
+          
+            <FormControl  mt="25">
+            <FormControl.Label>Apellido</FormControl.Label>
+            <Input />
+          </FormControl>   
+
+          
+            <FormControl  mt="25">
+            <FormControl.Label>D.N.I</FormControl.Label>
+            <TextInput keyboardType="numeric" />
+            <Input  maxLength={8}  />
+          </FormControl>         
+
+          
+          <FormControl  mt="25">
+            <FormControl.Label>N° De telefono </FormControl.Label>
+            <Input  maxLength={13} />
+          </FormControl>
+             
+                <Button margin="5" colorScheme="blue" size="lg"
+            onPress={()=>navigation.navigate('AltaRealizado')}
+            >     Cargar Usuario     </Button>
+        
+
+        </Box>
+    </Center>
+    
     );
+    
 }
+
 
 const styles = StyleSheet.create({
     container: {
