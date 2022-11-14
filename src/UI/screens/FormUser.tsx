@@ -9,17 +9,17 @@ export default function FormUser ({navigation}:PropsNavigation){
 
 
 
-
+  const [service, setService] = React.useState("");
     const Tipo=["Directivo/a","Secretario/a","Preceptor/a"];
     return(
-        <Center flex={1}>
+        <Center flex={2}>
         <Box safeArea p="2" py="8" w="90%" maxW="290">
      
-        <Button margin="5" colorScheme="blue" size="lg"
+        <Button margin="3" colorScheme="blue" size="lg"
             onPress={()=>navigation.goBack()}
             >     Back    </Button>
 
-     <Button margin="5" colorScheme="blue" size="lg"
+     <Button margin="3" colorScheme="blue" size="lg"
             onPress={()=>navigation.navigate('MainMenu')}
             >     Menu     </Button>
         
@@ -60,9 +60,22 @@ export default function FormUser ({navigation}:PropsNavigation){
             <Input  maxLength={13} />
           </FormControl>
              
+             
+<Select selectedValue={service} minWidth="200" accessibilityLabel="Ingre el tipo de usuario" placeholder="Ingre el tipo de usuaro
+" _selectedItem={{
+              bg: "teal.600",
+              endIcon: <CheckIcon size="5"   />
+            }} mt={10} onValueChange={itemValue => setService(itemValue)}>
+                <Select.Item label="Preceptor/a " value="ux" />
+                <Select.Item label="Secretario/a " value="ux" />
+                <Select.Item label="Directivo/a " value="ux" />
+            
+              </Select> 
+             
                 <Button margin="5" colorScheme="blue" size="lg"
             onPress={()=>navigation.navigate('AltaRealizado')}
             >     Cargar Usuario     </Button>
+ 
         
 
         </Box>
