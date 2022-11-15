@@ -3,9 +3,11 @@ import { Box, Button, Center, HamburgerIcon, Heading, Menu, Pressable } from "na
 import React from "react";
 import { StyleSheet } from "react-native";
 import Navigation, { RootStackParams } from "../nav/Navigation";
-
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {} from "@fortawesome/free-brands-svg-icons";
 type PropsNavigation = NativeStackScreenProps<RootStackParams, 'MainMenu'>
 // Menu principal 
+
 export  default function MainMenu ({navigation}:PropsNavigation) {
     return(
         <Center w="100%" flex={"1"}>
