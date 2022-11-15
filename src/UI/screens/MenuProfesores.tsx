@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
-import { Center, FlatList, Input, Spinner, View } from "native-base";
+import React  from "react";
+import { Center, FlatList, Spinner } from "native-base";
 import PressableProfesor from "../components/PressableProfesor";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { database } from "../database/FirebaseConfig";
+
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import Navigation, { RootStackParams } from "../nav/Navigation";
+import { RootStackParams } from "../nav/Navigation";
 import {
   getMoreProfesores,
   getProfesores,
 } from "../hooks/useFirebaseFunctions";
-import { useNavigation } from "@react-navigation/native";
+
 
 type PropsNavigation = NativeStackScreenProps<
   RootStackParams,

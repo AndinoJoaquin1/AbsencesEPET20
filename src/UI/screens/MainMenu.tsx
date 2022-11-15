@@ -1,11 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Box, Button, Center, HamburgerIcon, Heading, Icon, Menu, Pressable } from "native-base";
+import { Box, Button, Center } from "native-base";
 import React from "react";
-import { StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
-import Navigation, { RootStackParams } from "../nav/Navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { } from "@fortawesome/free-brands-svg-icons";
+import  { RootStackParams } from "../nav/Navigation";
 type PropsNavigation = NativeStackScreenProps<RootStackParams, 'MainMenu'>
 // Menu principal 
 

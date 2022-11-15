@@ -1,32 +1,11 @@
-import {
-  collection,
-  doc,
-  getDoc,
-  query,
-  updateDoc,
-  where,
-} from "firebase/firestore";
-import {
-  Box,
-  Button,
-  Center,
-  HStack,
-  Text,
-  View,
-  Select,
-  Input,
-  CheckIcon,
-  Modal,
-  Toast,
-} from "native-base";
-import React, { useState } from "react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { Box, Button, Text, Toast } from "native-base";
+import React from "react";
 import { database } from "../database/FirebaseConfig";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../nav/Navigation";
-import DateTimePicker from "react-native-modal-datetime-picker";
 
-
-type Props = NativeStackScreenProps<RootStackParams,"ModProfesor">;
+type Props = NativeStackScreenProps<RootStackParams, "ModProfesor">;
 
 const ModProfesor = ({ route, navigation }: Props) => {
   const idRef = route.params.id;
@@ -34,24 +13,23 @@ const ModProfesor = ({ route, navigation }: Props) => {
   const getDocbyId = getDoc(docRef).then((doc) => {
     console.log(doc.data());
   });
-  const addToast=()=> {
+  const addToast = () => {
     Toast.show({
-     title: "Profesor Marcado"
-   });
- }
+      title: "Profesor Marcado",
+    });
+  };
 
   const handleUpdate = async () => {
     try {
       await updateDoc(docRef, {
         ausente: true,
       });
-      addToast()
-      navigation.goBack()
+      addToast();
+      navigation.goBack();
     } catch (e) {
       alert(e.message);
     }
-   };
-
+  };
 
   return (
     <Box safeArea alignSelf="center" flex="1">
@@ -59,11 +37,9 @@ const ModProfesor = ({ route, navigation }: Props) => {
         ¿Desea marcar a {route.params.firstName} {route.params.lastName} como
         ausente?
       </Text>
-      <Button colorScheme="darkBlue" mt="10"
-      onPress={handleUpdate}
-      >
-        Aceptar</Button>
-        
+      <Button colorScheme="darkBlue" mt="10" onPress={handleUpdate}>
+        Aceptar
+      </Button>
     </Box>
   );
 };

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Button, Center, FormControl, Input, Text, Toast } from "native-base";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../nav/Navigation";
 import { useAuth } from "../context/AuthContext";
-import { auth } from "../database/FirebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 
 type PropsNavigation = NativeStackScreenProps<RootStackParams, "Registro">;
 

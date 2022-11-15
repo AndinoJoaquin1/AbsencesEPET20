@@ -1,4 +1,4 @@
-import { Center, Spinner, Text } from 'native-base';
+import { Center, Spinner } from 'native-base';
 import React from 'react';
 
 const SplashScreen = () => {

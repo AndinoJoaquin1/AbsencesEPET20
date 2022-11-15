@@ -2,10 +2,10 @@ import React from 'react';
 import { Center, Spinner } from 'native-base';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParams } from '../nav/Navigation';
-import PressableProfesor from '../components/PressableProfesor';
 import { FlatList } from 'native-base';
 import { getMoreProfesoresAusentes } from '../hooks/useFirebaseFunctions';
 import { getProfesoresAusentes } from './../hooks/useFirebaseFunctions';
+import PressableProfesorAusente from '../components/PressableProfesorAusente';
 
 
 type PropsNavigation = NativeStackScreenProps<
@@ -47,7 +47,7 @@ export default function MenuInasistencias({ navigation }: PropsNavigation) {
             data={profesores}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
-              <PressableProfesor
+              <PressableProfesorAusente
                 lastName={item.lastName}
                 firstName={item.firstName}
                 curso={item.curso}
