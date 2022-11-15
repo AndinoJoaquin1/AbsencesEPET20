@@ -16,6 +16,7 @@ import {
   Select,
   Input,
   CheckIcon,
+  Modal,
 } from "native-base";
 import React, { useState } from "react";
 import { database } from "../database/FirebaseConfig";
@@ -23,7 +24,14 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../nav/Navigation";
 import DateTimePicker from "react-native-modal-datetime-picker";
 
-type Props = NativeStackScreenProps<RootStackParams, "ModProfesor">;
+
+
+<div id="poup" style="display: none;">
+  
+</div>
+
+
+type Props = NativeStackScreenProps<RootStackParams,"ModProfesor">;
 
 const ModProfesor = ({ route }: Props) => {
   const idRef = route.params.id;
@@ -40,17 +48,19 @@ const ModProfesor = ({ route }: Props) => {
     } catch (e) {
       console.log(e.message);
     }
-  };
+   };
 
   return (
     <Box safeArea alignSelf="center" flex="1">
       <Text>
-        Desea marcar a {route.params.firstName} {route.params.lastName} como
-        ausente
+        ¿Desea marcar a {route.params.firstName} {route.params.lastName} como
+        ausente?
       </Text>
       <Button
       onPress={handleUpdate}
-      >Aceptar</Button>
+      >
+        Aceptar</Button>
+        
     </Box>
   );
 };
