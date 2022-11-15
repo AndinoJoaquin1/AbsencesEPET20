@@ -47,11 +47,11 @@ const ModProfesor = ({ route }: Props) => {
 
   return (
     <Box safeArea alignSelf="center" flex="1">
-      <Text>
+      <Text mt="50%">
         ¿Desea marcar a {route.params.firstName} {route.params.lastName} como
         ausente?
       </Text>
-      <Button
+      <Button colorScheme="darkBlue" mt="10"
       onPress={handleUpdate}
       >
         Aceptar</Button>

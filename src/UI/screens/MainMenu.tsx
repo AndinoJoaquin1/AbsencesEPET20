@@ -27,11 +27,16 @@ export default function MainMenu({ navigation }: PropsNavigation) {
                 </Button>
 
 
+                <Button colorScheme="blue" size="lg" mt="20" w="200"
+                    onPress={() => navigation.navigate('FormProfesores')}>
+                    Agregar Profesor
+                </Button>
 
                 <Button colorScheme="blue" size="lg" mt="20" w="200"
                     onPress={logOut}>
                     Cerrar Session
                 </Button>
+
 
             </Box>
         </Center>

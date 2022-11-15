@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Center, Input } from "native-base";
+import { Box, Button, Center, Input, Toast } from "native-base";
 import { database } from '../database/FirebaseConfig';
 import { collection, addDoc } from "firebase/firestore";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -17,19 +17,25 @@ export default function FormProfesores ({navigation}:PropsNavigation){
         curso:''
     })
 
+    const addToast=()=> {
+        Toast.show({
+         title: "Profesor Agregado"
+       });
+     }
+
     const Send = async () => {
         await addDoc(collection(database, 'prueba'), newProfesor);
-        console.log("ok");
+        addToast()
     }
 
     return(
         <Center safeArea>
-            <Box mt="25%">
-                <Input placeholder="nombre" onChangeText={(value) => setNewProfesor({...newProfesor, firstName:value})}/>
-                <Input placeholder="apellido" onChangeText={(value) => setNewProfesor({...newProfesor, lastName:value})}/>
-                <Input placeholder="materia" onChangeText={(value) => setNewProfesor({...newProfesor, materia:value})}/>
-                <Input placeholder="curso" onChangeText={(value) => setNewProfesor({...newProfesor, curso:value})}/>
-                <Button onPress={Send}>
+            <Box mt="25%" w="90%">
+                <Input placeholder="Nombre" onChangeText={(value) => setNewProfesor({...newProfesor, firstName:value})} />
+                <Input placeholder="Apellido" onChangeText={(value) => setNewProfesor({...newProfesor, lastName:value})} mt="5"/>
+                <Input placeholder="Materia" onChangeText={(value) => setNewProfesor({...newProfesor, materia:value})} mt="5"/>
+                <Input placeholder="Curso" onChangeText={(value) => setNewProfesor({...newProfesor, curso:value})} mt="5"/>
+                <Button onPress={Send} colorScheme="darkBlue" mt="10">
                     Agregar
                 </Button>
             </Box>
