@@ -17,6 +17,7 @@ import {
   Input,
   CheckIcon,
   Modal,
+  Toast,
 } from "native-base";
 import React, { useState } from "react";
 import { database } from "../database/FirebaseConfig";
@@ -27,20 +28,27 @@ import DateTimePicker from "react-native-modal-datetime-picker";
 
 type Props = NativeStackScreenProps<RootStackParams,"ModProfesor">;
 
-const ModProfesor = ({ route }: Props) => {
+const ModProfesor = ({ route, navigation }: Props) => {
   const idRef = route.params.id;
   const docRef = doc(database, "prueba", idRef);
   const getDocbyId = getDoc(docRef).then((doc) => {
     console.log(doc.data());
   });
+  const addToast=()=> {
+    Toast.show({
+     title: "Profesor Marcado"
+   });
+ }
+
   const handleUpdate = async () => {
     try {
       await updateDoc(docRef, {
         ausente: true,
       });
-      console.log("ok");
+      addToast()
+      navigation.goBack()
     } catch (e) {
-      console.log(e.message);
+      alert(e.message);
     }
    };
 

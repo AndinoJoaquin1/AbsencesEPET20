@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, Center, Box, Spinner } from 'native-base';
+import { Center, Spinner } from 'native-base';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParams } from '../nav/Navigation';
 import PressableProfesor from '../components/PressableProfesor';
@@ -53,13 +53,6 @@ export default function MenuInasistencias({ navigation }: PropsNavigation) {
                 curso={item.curso}
                 materia={item.materia}
                 id={item.id}
-                onPress={(id, lastName, firstName) => {
-                  navigation.navigate("ModProfesor", {
-                    id,
-                    lastName,
-                    firstName,
-                  });
-                }}
               />
             )}
           />

@@ -17,6 +17,7 @@ export const getProfesores = async () => {
   const q = query(
     collection(database, "prueba"),
     orderBy("lastName"),
+    where("ausente", "==", true),
     limit(10)
   );
   const querySnapshot = await getDocs(q);
@@ -36,6 +37,7 @@ export const getMoreProfesores = async (lastDoc) => {
     collection(database, "prueba"),
     orderBy("lastName"),
     startAfter(lastDoc),
+    where("ausente", "==", false),
     limit(10)
   );
   const querySnapshot = await getDocs(q);
