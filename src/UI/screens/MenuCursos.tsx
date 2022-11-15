@@ -10,8 +10,7 @@ export default function MenuCursos({navigation}:PropsNavigation) {
        
             <Button onPress={() => navigation.goBack()} colorScheme="blue" size="lg">         Back         </Button>
         
-            <Text >Cursos </Text>
-           
+     
             <Button margin="5" colorScheme="blue" size="lg"
             onPress={()=>navigation.navigate('FormCurso')}
             >     Alta Curso     </Button>
