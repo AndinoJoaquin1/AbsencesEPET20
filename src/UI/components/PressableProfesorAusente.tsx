@@ -7,9 +7,14 @@ interface Props{
   lastName:string,
   materia:string,
   curso:string,
+  onPress: (
+    id:string,
+    firstName:string,
+    lastName:string,
+    )=>void
 }
 
-const PressableProfesorAusente = ({id,firstName, lastName, curso, materia}:Props) => {
+const PressableProfesorAusente = ({onPress,id,firstName, lastName, curso, materia}:Props) => {
   useEffect(()=>{
   },[])
   return (   
@@ -17,6 +22,8 @@ const PressableProfesorAusente = ({id,firstName, lastName, curso, materia}:Props
     <Box safeArea width="full" >
       {/*card*/}
       <Pressable
+
+        onPress={()=> onPress(id,firstName,lastName)}
         marginX="5"
         width="90%"
         >

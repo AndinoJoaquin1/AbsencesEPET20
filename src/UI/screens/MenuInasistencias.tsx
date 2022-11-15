@@ -53,6 +53,13 @@ export default function MenuInasistencias({ navigation }: PropsNavigation) {
                 curso={item.curso}
                 materia={item.materia}
                 id={item.id}
+                onPress={(id, lastName, firstName) => {
+                  navigation.navigate("ModProfesorAusente", {
+                    id,
+                    lastName,
+                    firstName,
+                  });
+                }}
               />
             )}
           />

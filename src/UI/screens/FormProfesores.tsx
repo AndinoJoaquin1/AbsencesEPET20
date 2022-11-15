@@ -14,7 +14,8 @@ export default function FormProfesores ({navigation}:PropsNavigation){
         firstName:'',
         lastName:'',
         materia:'',
-        curso:''
+        curso:'',
+        ausente:false
     })
 
     const addToast=()=> {
@@ -26,6 +27,7 @@ export default function FormProfesores ({navigation}:PropsNavigation){
     const Send = async () => {
         await addDoc(collection(database, 'prueba'), newProfesor);
         addToast()
+        navigation.goBack()
     }
 
     return(

@@ -17,8 +17,7 @@ export const getProfesores = async () => {
   const q = query(
     collection(database, "prueba"),
     orderBy("lastName"),
-    where("ausente", "==", true),
-    limit(10)
+    where("ausente", "==", false)
   );
   const querySnapshot = await getDocs(q);
   const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];

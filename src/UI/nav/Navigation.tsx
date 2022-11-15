@@ -10,6 +10,7 @@ import ModProfesor from "../screens/ModProfesor";
 import Registro from "../screens/Registro";
 import { useAuth } from "../context/AuthContext";
 import SplashScreen from "../screens/SplashScreen";
+import ModProfesorAusente from "../screens/ModProfesorAusente";
 
 export type RootStackParams = {
   Inicio;
@@ -33,6 +34,7 @@ export type RootStackParams = {
   };
   Registro;
   SplashScreen;
+  ModProfesorAusente;
 };
 const Stack = createNativeStackNavigator<RootStackParams>();
 
@@ -86,7 +88,10 @@ const Navigation = () => {
               }} />
             <Stack.Screen name="ModProfesor" component={ModProfesor}
               options={{
-                headerBackVisible: false,
+                title: "Marcar Profesor",
+              }} />
+              <Stack.Screen name="ModProfesorAusente" component={ModProfesorAusente}
+              options={{
                 title: "Marcar Profesor",
               }} />
           </>
