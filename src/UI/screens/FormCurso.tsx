@@ -53,8 +53,9 @@ export default function FormCurso ({navigation}:PropsNavigation){
               </Select>
 
               <Button margin="5" colorScheme="blue" size="lg"
-            onPress={()=>navigation.navigate('FormUser')}
-            >    Cargar Usuario    </Button>
+            onPress={()=>navigation.navigate('AltaRealizado')}
+            >     Cargar Curso     </Button>
+ 
 
 
             
