@@ -1,8 +1,11 @@
 import React from "react";
 import { Box, Button, Center, Input } from "native-base";
 import { database } from '../database/FirebaseConfig';
-import {PropsNavigation} from '../interfaces/interfaces';
 import { collection, addDoc } from "firebase/firestore";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParams } from "../nav/Navigation";
+
+type PropsNavigation = NativeStackScreenProps<RootStackParams,'FormProfesores'>
 
 // Componente de formulario de carga de profesores
 export default function FormProfesores ({navigation}:PropsNavigation){

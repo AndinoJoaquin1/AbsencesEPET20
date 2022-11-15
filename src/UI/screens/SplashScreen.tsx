@@ -1,10 +1,10 @@
-import { Center, Text } from 'native-base';
+import { Center, Spinner, Text } from 'native-base';
 import React from 'react';
 
 const SplashScreen = () => {
     return (
-        <Center>
-            <Text>Cargando</Text>
+        <Center flex="1">
+            <Spinner size="lg"/>
         </Center>
     );
 }

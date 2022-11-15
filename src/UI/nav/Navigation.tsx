@@ -36,9 +36,9 @@ export type RootStackParams = {
   ModRealizado;
   InstConfirmacion;
   ModProfesor: {
-    id: string;
-    lastName: string;
-    firstName: string;
+    id: string,
+    lastName: string,
+    firstName: string,
   };
   Registro;
   SplashScreen;
@@ -58,7 +58,7 @@ const Navigation = () => {
         }}
       >
         {loading?(
-          <Stack.Screen name="SplashScreen" component={SplashScreen}/>
+          <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown:false}}/>
           ):null }
         
         {user == null ? (

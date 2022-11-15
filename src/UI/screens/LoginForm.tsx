@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Box, Button, Center, FormControl, Heading,  Input, Text } from "native-base";
+import { Box, Button, Center, FormControl, Heading,  Input, Text, Toast } from "native-base";
 import React,{useState} from "react";
 import { useAuth } from "../context/AuthContext";
 import { RootStackParams } from "../nav/Navigation";
@@ -14,10 +14,17 @@ export default function LoginForm({ navigation }: PropsNavigation) {
   const [password, setPassword] = useState("");
   const [displayError, setDisplayError] = useState("");
   
+  const addToast=()=> {
+     Toast.show({
+      title: "Sesion Iniciada"
+    });
+  }
+
   const handleSubmit = async (e) => {
     try {
       setDisplayError("");
       await login(email, password);
+      addToast()
       navigation.navigate('MainMenu')
     } catch (e) {
       setDisplayError(getError(e));
@@ -26,11 +33,12 @@ export default function LoginForm({ navigation }: PropsNavigation) {
   return (
     <Center flex={1}>
       <Box safeArea p="2" py="8" w="90%" maxW="290">
-        <Heading size="lg" fontWeight="600" color="coolGray.800">
-          Bienvenido
+        <Heading size="xl" fontWeight="600" color="coolGray.800">
+          Bienvenido 
+          Absences EPET 20
         </Heading>
           <FormControl mt="25">
-            <FormControl.Label>Usuario</FormControl.Label>
+            <FormControl.Label>Correo</FormControl.Label>
             <Input onChangeText={(value)=>setEmail(value)}/>
           </FormControl>
           <FormControl>

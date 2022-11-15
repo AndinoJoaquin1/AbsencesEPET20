@@ -25,12 +25,6 @@ import { RootStackParams } from "../nav/Navigation";
 import DateTimePicker from "react-native-modal-datetime-picker";
 
 
-
-<div id="poup" style="display: none;">
-  
-</div>
-
-
 type Props = NativeStackScreenProps<RootStackParams,"ModProfesor">;
 
 const ModProfesor = ({ route }: Props) => {
@@ -39,7 +33,7 @@ const ModProfesor = ({ route }: Props) => {
   const getDocbyId = getDoc(docRef).then((doc) => {
     console.log(doc.data());
   });
-  const handleUpdate = async (e,route) => {
+  const handleUpdate = async () => {
     try {
       await updateDoc(docRef, {
         ausente: true,
@@ -49,6 +43,7 @@ const ModProfesor = ({ route }: Props) => {
       console.log(e.message);
     }
    };
+
 
   return (
     <Box safeArea alignSelf="center" flex="1">

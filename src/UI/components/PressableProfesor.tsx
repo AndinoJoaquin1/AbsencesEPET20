@@ -1,5 +1,5 @@
-import React from "react";
-import { AlertDialog, Box, Button, Heading, Pressable, Text } from "native-base";
+import React, { useEffect, useState } from "react";
+import { AlertDialog, Box, Button, Center, Heading, Pressable, Text } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 
@@ -9,17 +9,25 @@ interface Props{
   lastName:string,
   materia:string,
   curso:string,
-  onPress: (id:string)=>void
+  onPress: (
+    id:string,
+    firstName:string,
+    lastName:string,
+    )=>void
 }
 
 const PressableProfesor = ({onPress,id,firstName, lastName, curso, materia}:Props) => {
-  return (    
-    <Box safeArea>
+  useEffect(()=>{
+  },[])
+  return (   
+    <Center >
+    <Box safeArea width="full" >
       {/*card*/}
       <Pressable
         marginX="5"
-        onPress={()=> onPress(id)}
-      >
+        onPress={()=> onPress(id,firstName,lastName)}
+        width="90%"
+        >
         {({ isPressed }) => { return(
           <Box bg={isPressed? "gray.300": "white"} p="5" shadow="8" rounded="10" m="1"
           style={{
@@ -32,9 +40,11 @@ const PressableProfesor = ({onPress,id,firstName, lastName, curso, materia}:Prop
             <Text>{curso}</Text>
           </Box>
         )
-        }} 
+      }} 
       </Pressable>
     </Box>
+      
+      </Center> 
   );
 };
 

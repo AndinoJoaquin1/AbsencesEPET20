@@ -1,4 +1,4 @@
-import React, {useEffect}  from "react";
+import React, { useEffect } from "react";
 import { Center, FlatList, Input, Spinner, View } from "native-base";
 import PressableProfesor from "../components/PressableProfesor";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
@@ -16,12 +16,6 @@ type PropsNavigation = NativeStackScreenProps<
   "MenuProfesores"
 >;
 
-
-
-
-
-
-
 const MenuProfesores = ({ navigation }: PropsNavigation) => {
   const [profesores, setProfesores] = React.useState(new Array());
   const [lastDoc, setLastDoc] = React.useState(Object);
@@ -31,11 +25,7 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
     setProfesores([...profesores, ...getData.profesores]);
     setLastDoc(getData.lastVisible);
     console.log(lastDoc);
-  
-    
-  
   };
-
 
   const moreData = async () => {
     if (!lastDocIsLoad) {
@@ -50,13 +40,10 @@ const MenuProfesores = ({ navigation }: PropsNavigation) => {
 
   React.useEffect(() => {
     consulta();
-
   }, []);
 
   return (
-
     <Center flex="1">
-
       <FlatList
         w="full"
         onEndReached={moreData}
