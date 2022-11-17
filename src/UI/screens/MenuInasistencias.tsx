@@ -1,8 +1,7 @@
 import React from 'react';
-import { Center, Spinner } from 'native-base';
+import { Center, Spinner, FlatList } from 'native-base';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParams } from '../nav/Navigation';
-import { FlatList } from 'native-base';
 import { getMoreProfesoresAusentes } from '../hooks/useFirebaseFunctions';
 import { getProfesoresAusentes } from './../hooks/useFirebaseFunctions';
 import PressableProfesorAusente from '../components/PressableProfesorAusente';
@@ -10,7 +9,7 @@ import PressableProfesorAusente from '../components/PressableProfesorAusente';
 
 type PropsNavigation = NativeStackScreenProps<
   RootStackParams,
-  "MenuInasistencias"
+  "Inicio"
 >;
 
 export default function MenuInasistencias({ navigation }: PropsNavigation) {
@@ -21,7 +20,6 @@ export default function MenuInasistencias({ navigation }: PropsNavigation) {
     const getData = await getProfesoresAusentes();
         setProfesores([...profesores, ...getData.profesores]);
         setLastDoc(getData.lastVisible);
-        console.log(lastDoc);
   };
 
   const moreData = async () => {

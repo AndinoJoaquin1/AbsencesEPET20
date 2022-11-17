@@ -19,14 +19,15 @@ export const getProfesores = async () => {
     orderBy("lastName"),
     where("ausente", "==", false)
   );
-  const querySnapshot = await getDocs(q);
-  const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+  const unsuscribe = onSnapshot(q,(querySnapshot)=>
   querySnapshot.forEach((doc) => {
     let profData = doc.data();
     profData.id = doc.id;
     profesores.push(profData);
-    console.log(profesores);
-  });
+  }
+  ))
+  const querySnapshot = await getDocs(q);
+  const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   return { profesores, lastVisible };
 };
 

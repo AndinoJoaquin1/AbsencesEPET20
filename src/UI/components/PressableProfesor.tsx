@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { AlertDialog, Box, Button, Center, Heading, Pressable, Text } from "native-base";
-import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
+import { Box, Center, Heading, Pressable, Text } from "native-base";
 
 interface Props{
   id:string,

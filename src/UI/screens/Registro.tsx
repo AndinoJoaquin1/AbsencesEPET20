@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Box, Button, Center, FormControl, Input, Text, Toast } from "native-base";
+import { Box, Button, Center, FormControl, Input, Text } from "native-base";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../nav/Navigation";
 import { useAuth } from "../context/AuthContext";
+import addToast from "../components/Toast";
 
 type PropsNavigation = NativeStackScreenProps<RootStackParams, "Registro">;
 
@@ -12,26 +13,25 @@ export default function Registro({ navigation }: PropsNavigation) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordTwo, setPasswordTwo] = useState("");
-  const [displayError, setDisplayError] = useState("");
   const [buttonState, setButtonState] = useState(false);
 
-  const addToast=()=> {
-    Toast.show({
-     title: "Correo Registrado"
-   });
- }
+
   const handleSingUp = async () => {
     try {
+      setButtonState(true)
       await signUp(email, password);
-      addToast()
+      addToast("Correo Registrado");
+      navigation.goBack();
+      setButtonState(false)
     } catch (e) {
-      setDisplayError(getError(e));
+      addToast(getError(e));
+      setButtonState(false)
     }
   };
 
   const verifyPassword = () => {
     if (password != passwordTwo) {
-      setDisplayError("Las contaseñas deben ser iguales");
+      addToast("Las contaseñas deben ser iguales");
     } else {
       handleSingUp();
     }
@@ -62,10 +62,8 @@ export default function Registro({ navigation }: PropsNavigation) {
             mt="2"
           />
         </FormControl>
-        <Text mt="1" color="red">
-          {displayError}
-        </Text>
         <Button
+          isLoading={buttonState}
           colorScheme="darkBlue"
           isDisabled={buttonState}
           onPress={verifyPassword}

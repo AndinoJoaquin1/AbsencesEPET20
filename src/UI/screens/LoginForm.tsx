@@ -1,8 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Box, Button, Center, FormControl, Heading,  Input, Text, Toast } from "native-base";
+import { Box, Button, Center, FormControl, Heading,  Input, Text} from "native-base";
 import React,{useState} from "react";
 import { useAuth } from "../context/AuthContext";
 import { RootStackParams } from "../nav/Navigation";
+import addToast from './../components/Toast';
 
 type PropsNavigation = NativeStackScreenProps<RootStackParams,'Inicio'>
 
@@ -12,22 +13,19 @@ export default function LoginForm({ navigation }: PropsNavigation) {
   const {login,getError} = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displayError, setDisplayError] = useState("");
+  const [buttonState, setButtonState] = useState(false);
   
-  const addToast=()=> {
-     Toast.show({
-      title: "Sesion Iniciada"
-    });
-  }
 
   const handleSubmit = async (e) => {
     try {
-      setDisplayError("");
+      setButtonState(true);
       await login(email, password);
-      addToast()
+      addToast("Sesion Iniciada");
       navigation.navigate('MainMenu')
+      setButtonState(false);
     } catch (e) {
-      setDisplayError(getError(e));
+      addToast(getError(e));
+      setButtonState(false);
     }
   };
   return (
@@ -45,14 +43,15 @@ export default function LoginForm({ navigation }: PropsNavigation) {
             <FormControl.Label>Contraseña</FormControl.Label>
             <Input type="password" onChangeText={(value)=>setPassword(value)}/>
           </FormControl>
-          <Text mt="1" color="red">{displayError}</Text>
           <Button mt="5"  colorScheme="darkBlue"
           onPress={handleSubmit}
+          isLoading={buttonState}
           >
             Ingresar
           </Button>
           <Button mt="5" colorScheme="blueGray"
           onPress={()=>navigation.navigate('Registro')}
+          isLoading={buttonState}
           >
             Registrate
           </Button>
